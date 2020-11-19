@@ -1,0 +1,35 @@
+<h1><%= @title = "Online Booking" %></h1>
+
+<div id="booking">
+<%= error_messages_for :booking %>
+<%= form_tag do %>
+<ol>
+<li>
+  <%= label :datetime, "Date & time" %>
+  <%= select_datetime Time.new, :start_year => Time.new.year, :end_year => Time.new.year + 1 %>
+</li>
+<li>
+  <%= label_tag :name, "Name *" %>
+  <%= text_field_tag :name, params[:name] %>
+</li>
+<li>
+  <%= label_tag :address, "Address *" %>
+  <%= text_field_tag :address, params[:address] %>
+</li>
+<li>
+  <%= label_tag :email, "Email *" %>
+  <%= text_field_tag :email, params[:email] %>
+</li>
+<li>
+  <%= label_tag :phone, "Phone" %>
+  <%= text_field_tag :phone, params[:phone] %>
+</li>
+<li>
+  <%= label_tag :comments, "Comments" %>
+  <%= text_field_tag :comments, params[:comments] %>
+</li>
+<li>
+  <%= submit_tag "Submit" %>
+</li>
+<% end %>
+</div>

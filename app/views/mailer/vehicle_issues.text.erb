@@ -1,0 +1,17 @@
+<%= pluralize(@vehicle_issues.length, 'vehicle issues') %> created within last 12 hours:
+
+<% @vehicle_issues.each_with_index do |vi, i| %>
+<% if i > 0 %>
+-------------------------------------------------------------------------------
+<% end %>
+
+User: <%= vi.user.initials %>
+Driver: <%= vi.driver %>
+Unit: <%= vi.unit.number %>
+Odometer: <%= vi.odometer %>
+Category: <%= vi.category %>
+Created: <%= vi.created_at.to_s(:short) %>
+
+<%= vi.details %>
+
+<% end %>

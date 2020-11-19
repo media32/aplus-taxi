@@ -1,0 +1,13 @@
+<h1>Locations</h1>
+<table>
+<tr>
+  <th>Location</th>
+  <th class="price">Charge</th>
+</tr>
+<% @locations.each do |l| %>
+  <tr>
+    <td><%= l %></td>
+    <td class="price"><%= number_to_currency(l.charge) if l.charge %></td>
+  </tr>
+<% end %>
+</table>

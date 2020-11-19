@@ -1,0 +1,36 @@
+<h1>Drivers</h1>
+
+<ul id="submenu">
+<li><%= link_to 'New Driver', new_driver_path %></li>
+</ul>
+
+<% if @drivers.length > 0 %>
+<table class="list">
+  <tr>
+    <th>Number</th>
+    <th>Unit</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Shift</th>
+    <th>Active</th>
+    <th>Last Random Trip</th>
+    <th>Last Scheduled Trip</th>
+	  <th></th>
+  </tr>
+  <% @drivers.each do |driver| %>
+  <tr>
+    <td><%= driver.number %></td>
+    <td><%= driver.unit %></td>
+    <td><%= driver.name %></td>
+    <td><%= driver.status %></td>
+    <td><%= driver.shift %></td>
+    <td><%= image_tag driver.active ? 'yes.png' : 'no.png' %></td>
+    <td><%= driver.last_random_trip %></td>
+    <td><%= driver.last_scheduled_trip %></td>
+    <td><%= link_to 'Edit', edit_driver_path(driver) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= will_paginate @drivers %>
+<% end %>

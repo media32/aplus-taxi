@@ -1,0 +1,9 @@
+!.keep
+*.DS_Store
+*.swo
+*.swp
+/.bundle
+/.env
+/.ruby-gemset
+/public/system
+/tmp/*

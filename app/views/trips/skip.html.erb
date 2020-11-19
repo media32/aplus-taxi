@@ -1,0 +1,21 @@
+<h1>Skip Driver for <%= @trip.scheduled ? ' Scheduled' : ' Random' %> Trip</h1>
+
+<%= form_for @trip do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <% if @trip.driver %>
+  <li>
+    <%= f.label :driver_id %>
+    <%= @trip.driver %>
+    <%= f.hidden_field :driver_id %>
+  </li>
+  <% end %>
+  <li>
+    <% if @trip.scheduled %>
+      <%= f.hidden_field :scheduled %>
+    <% end %>
+    <%= f.hidden_field :skipped %>
+    <%= f.submit "Save" %>
+  </li>
+  </ol>
+<% end %>

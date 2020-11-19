@@ -1,0 +1,146 @@
+body {
+	background: #000;
+	color: #fff;
+	font-size: 90%;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+a { color: #fff; text-decoration: none; }
+a:hover { color: #dd0000; }
+a img { border: none; }
+
+form { margin: 1.5em 0; }
+form fieldset { border: none; border-bottom: 1px solid #ccc; margin: 10px 0 0 0; padding: 10px 0; }
+form fieldset legend { font-weight: bold; margin: 0; padding: 0; }
+form ol { list-style-type: none; margin: 0; padding: 0; }
+form li input[type='submit'] { margin-left: 150px; }
+form li { height: 1%; overflow: auto; margin: 0; padding: .25em 0; }
+form li label { display: inline; float: left; line-height: 1.4em; width: 150px; }
+form li p, form li span.hint { display: block; color: #666; margin: 0; padding: 0; margin-left: 150px; font-size: 75%; }
+form li ol { display: inline; }
+form li ol li { display: inline; }
+form li ol li label { display: inline; float: none; }
+
+img { border: none; }
+
+table { width: 100%; border-collapse: collapse; border-spacing: 0; }
+th { color: #666; font-weight: normal; font-size: 85%; text-transform: uppercase; vertical-align: bottom; }
+#content th a { color: #666; text-decoration: underline; }
+#content th .current {
+	padding-right: 15px;
+	background-repeat: no-repeat;
+	background-position: right center;
+	color: #000;
+}
+#content th .asc { background-image: url(/images/asc.gif); }
+#content th .desc { background-image: url(/images/desc.gif); }
+td { vertical-align: top; }
+td p { margin: 0; }
+td.number, td.price { text-align: right; }
+
+#header { position: relative; font-size: 90%; text-transform: uppercase; }
+
+#logo { margin: 3px 0; }
+
+#shortcuts { position: absolute; top: 0; right: 0; margin: 0 10px; font-size: 85%; }
+#shortcuts ul { margin: 0; padding: 0; }
+#shortcuts li { display: inline; padding-left: 1em; }
+
+#menu { margin: 10px; }
+#menu ul { margin: 0; padding: 0; width: 100%; }
+#menu li { display: inline; margin: 0; padding: 0 15px 0 0; color: #dd0000; }
+
+#submenu { margin: 25px 0; padding: 0; font-size: 90%; }
+#submenu li { display: inline; padding-right: 1em; }
+#submenu a { text-transform: uppercase; }
+
+#content { background: #fff; color: #000; padding: 10px; }
+#content a { color: #dd0000; }
+#content h1,h2,h3,h4,h5 { }
+#content .list { border-top: 1px solid #ddd; border-right: 1px solid #ccc; font-size: 90%; }
+#content .list th { background: url(/images/bg.gif) repeat-x bottom; border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; padding: .25em; }
+#content .list td { border-bottom: 1px solid #ccc; border-left: 1px solid #ccc; padding: .25em; }
+
+#content .stats-day-night { height: 1%; overflow: auto; }
+#content .stats-day-night fieldset.day { float: left; width: 50%; }
+#content .stats-day-night fieldset.night { float: left; width: 50%; }
+
+#booking li { margin: 10px 0 0 0; padding: 0; text-align: left; }
+#booking input[type='text'] { width: 300px; }
+
+.spacer { clear: both; }
+
+#footer { margin: 2em 0; color: #fff; text-align: center; }
+
+#notice {
+	margin: 1em;
+	text-align: center;
+}
+#notice span {
+	padding: .4em;
+	background-color: #ffffcc;
+	color: #000;
+	font-weight: bold;
+}
+
+.fieldWithErrors {
+	display: inline;
+	color: #c00;
+	font-weight: bold;
+}
+
+#errorExplanation {
+	background: #eee;
+	border-bottom: 1px solid #ddd;
+	color: #000;
+	padding: 7px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+}
+#errorExplanation h2 { display: none; }
+
+.pagination { font-size: 120%; margin-top: 20px; text-align: center; }
+
+
+body { margin: 20px 0; color: #fff; line-height: 1.2em; }
+
+a { color: #ff0000; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1,h2,h3,h4,h4,h5 { font-weight: normal; text-transform: uppercase; }
+
+hr { border: none; border-top: 1px dotted #333; }
+
+#header { position: relative; width: 960px; margin: 0 auto; }
+#logo { margin: 10px 0; }
+
+#right { position: absolute; right: 0; top: 20px; width: 200px; }
+#right .sun-times { text-align: center; text-transform: uppercase; }
+#right .sun-times img { vertical-align: bottom; }
+#right .sun-times p { margin: 0; }
+#right .survey { margin-top: 40px; font-size: 120%; font-weight: bold; text-align: center; text-transform: none; }
+#right .survey a { color: #ffff00; }
+
+#home { font-family: sans-serif; font-size: 120%; text-align: center; }
+
+#banner { height: 70px; line-height: 70px; color: #fff; }
+#banner h2 { margin: 10px 0; padding: 0; font-size: 120%; text-transform: uppercase; }
+
+.content { width: 800px; margin: 0 auto; position: relative; }
+
+.benefits { overflow: hidden; width: 520px; height: 1%; font-size: 105%; margin: 0 auto; }
+.benefits ul { margin: 10px 0; padding: 0; text-align: left; }
+.benefits li { float: left; width: 259px; margin: 0; padding: 0; list-style-position: inside; list-style-image: url(/images/li.gif); line-height: 2em; }
+.benefits li.wheelchair { margin: 10px 0; display: block; width: 100%; text-align: center; }
+.benefits li.wheelchair img { vertical-align: middle; }
+
+.booking { font-size: 200%; text-transform: uppercase; }
+
+.contact h2 { margin: 5px 0; padding: 0; font-weight: bold; font-size: 300%; }
+.contact p { line-height: 1.2em; }
+
+#footer li { display: inline-block; width: 31%; font-size: 80%; }
+

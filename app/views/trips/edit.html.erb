@@ -1,0 +1,56 @@
+<h1>Edit Long Trip</h1>
+
+<% if current_user.admin? %>
+  <p><%= link_to "Delete", @trip, :method => :delete, :confirm => "Are you sure?" %></p>
+<% end %>
+
+<%= form_for @trip do |f| %>
+  <ol>
+  <li>
+    <%= f.label :scheduled %>
+    <%= f.check_box :scheduled %>
+  </li>
+  <li>
+    <%= f.label :driver_id %>
+    <%= f.collection_select :driver_id, Driver.active.order(:number), :id, :detail %>
+  </li>
+  <li>
+    <%= f.label :user %>
+    <%= f.object.user.initials if f.object.user %>
+  </li>
+  <li>
+    <%= f.label :location %>
+    <%= f.collection_select :location_id, Location.order(:name), :id, :name, {:include_blank => true} %>
+  </li>
+  <li>
+    <%= f.label :charge %>
+    <%= f.text_field :charge %>
+  </li>
+  <li>
+    <%= f.label :fee %>
+    <%= f.text_field :fee %>
+  </li>
+  <li>
+    <%= f.label :customer_id %>
+    <%= f.collection_select :customer_id, Customer.active.terms.with_type('Regular').order(:name), :id, :name, {:include_blank => true} %>  </li>
+  </li>
+  <li>
+    <%= f.label :comment %>
+    <%= f.text_field :comment, :size => 40 %>
+  </li>
+  <li>
+    <%= f.label :lease %>
+    <%= f.date_select :lease, :include_blank => true %>
+  </li>
+  <li>
+    <%= f.label :created_at %>
+    <%= f.datetime_select :created_at, :include_seconds => true %>
+  </li>
+  <li>
+    <%= f.label :skipped %>
+    <%= f.check_box :skipped %>
+  </li>
+  <li><%= f.submit "Save" %></li>
+  </ol>
+  </fieldset>
+<% end %>

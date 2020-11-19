@@ -1,0 +1,15 @@
+<h1>Drivers</h1>
+<table>  
+<tr>
+  <th>Number</th>
+  <th>Unit</th>
+  <th>Name</th>
+</tr>
+<% @drivers.each do |d| %>
+  <tr>
+    <td><%= d.number %></td>
+    <td><%= d.unit %></td>
+    <td><%= d.full_name %></td>
+  </tr>
+<% end %>
+</table>

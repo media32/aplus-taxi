@@ -1,0 +1,52 @@
+2011-06-23
+
+* Move online booking to it's own controller/page
+
+2011-06-22
+
+* Contact form
+* Charges customer ajax request
+
+2010-12-07
+
+* [VehicleIssue] Change ordering in controller
+
+2010-11-29
+
+* [VehicleIssue] Change created_on to datetime, setup rake task, model scope for sending email every 12 hours
+
+2010-11-17
+
+* [Deploy] Deploy
+* [Vehicle] Fix completed on in index
+* [Customer] Default to active
+* [Unit] Add active only show active units in selection
+- [Customer] manage by all users (hold)
+- Limit access to full data
+
+2010-11-16
+
+* [Vehicle] Report group by unit #, order by date asc, and adjust styling, search and filters
+* [Vehicle] Send email upon creation (look into RSS), update mailer
+* [Queue] Fix column sorting
+
+2010-11-13
+
+* [Customers] Add rate_origin, rate_dest, phone, fields
+* [Customers] Restrict clerks to create/edit/update/destroy cash customers only
+* [Customers] Rate renewal
+* [Customers] Rate renew filter fields
+* [Vehicle] Fields Date, D#, Unit#, Category, Details, Odometer, UserID, Completed_on
+* [Vehicle] Initial report for completed/incomplete
+* [Vehicle] Add units model and filter for all units or specific units
+* [Vehicle] Accessible by clerks and admin (admin only for completion)
+* Added additional checks to restrict non-clerks
+* Fix menu on home page
+* Add VehicleIssues.search includes where necessary
+* [Customers] Add number per page option
+* [Customers] Make taxable by default
+* [Customers] Add active field, show active by default
+
+2010-06-01
+
+* Added cust_type and rate fields, form, and report

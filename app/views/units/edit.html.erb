@@ -1,0 +1,7 @@
+<h1>Edit Unit</h1>
+
+<% if current_user.admin? %>
+  <%= link_to "Delete", @unit, :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+
+<%= render 'form' %>

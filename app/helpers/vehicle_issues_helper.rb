@@ -1,0 +1,2 @@
+module VehicleIssuesHelper
+end

@@ -1,0 +1,1191 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/Jamie/.rbenv/versions/1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-28 14:14:07 -0600
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/home (7.3ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 14:14:12 -0600
+  Processing by SessionController#new as HTML
+Rendered layouts/_menu.html.erb (0.4ms)
+Rendered session/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 14ms (Views: 13.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:20:23 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mSQL (2.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = '' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.3ms)
+Rendered session/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 155ms (Views: 19.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:24:09 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = '' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.4ms)
+Rendered session/new.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 94ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+  [1m[36mSQL (1.9ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("charges")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_charges_on_driver_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_customer_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("customers")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_customers_on_code')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("driver_shifts")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_driver_shifts_on_shift')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_driver_shifts_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("drivers")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_unit_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_drivers_on_number')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("stats")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_stats_on_date')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("trips")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_trips_on_customer_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_trips_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_trips_on_location_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_trips_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("units")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_units_on_active')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_units_on_number')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_admin')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("vehicle_issues")[0m
+  [1m[36mSQL (0.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("charges")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_charges_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_charges_on_customer_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customers")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_customers_on_code')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("driver_shifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_driver_shifts_on_shift')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_driver_shifts_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("drivers")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_unit_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_drivers_on_number')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("stats")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_stats_on_date')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("trips")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_trips_on_customer_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_trips_on_user_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_trips_on_location_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_trips_on_driver_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("units")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_units_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_units_on_number')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_admin')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("vehicle_issues")[0m
+  [1m[36mSQL (0.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("charges")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_charges_on_driver_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_customer_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("customers")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_customers_on_code')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("driver_shifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_driver_shifts_on_shift')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_driver_shifts_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("drivers")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_drivers_on_unit_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_drivers_on_number')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_drivers_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("stats")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_stats_on_date')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("trips")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_trips_on_customer_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_trips_on_user_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_trips_on_location_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_trips_on_driver_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("units")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_units_on_active')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_units_on_number')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_admin')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("vehicle_issues")[0m
+  [1m[36mSQL (0.9ms)[0m  [1mSELECT version FROM schema_migrations[0m
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (119.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (9.3ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (314.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to AddCodeToCustomers (20101120011657)
+  [1m[35mSQL (12.8ms)[0m  ALTER TABLE `customers` ADD `code` varchar(255) DEFAULT '' NOT NULL AFTER `id`
+Mysql2::Error: Table 'aplustaxi_dev.customers' doesn't exist: ALTER TABLE `customers` ADD `code` varchar(255) DEFAULT '' NOT NULL AFTER `id`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (58.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (185.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.1ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations`[0m
+Migrating to AddCodeToCustomers (20101120011657)
+  [1m[35mSQL (0.4ms)[0m  ALTER TABLE `customers` ADD `code` varchar(255) DEFAULT '' NOT NULL AFTER `id`
+Mysql2::Error: Table 'aplustaxi_dev.customers' doesn't exist: ALTER TABLE `customers` ADD `code` varchar(255) DEFAULT '' NOT NULL AFTER `id`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.1ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (46.2ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (203.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (16.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (60.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (223.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (13.1ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (23.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.1ms)[0m  SHOW TABLES 
+  [1m[36mSQL (53.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (186.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.1ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('0')[0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.1ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations`
+  [1m[36mSCHEMA (0.5ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (92.2ms)[0m  [1mCREATE TABLE `_units_old_20110104` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` integer NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (128.4ms)[0m  CREATE TABLE `_units_old_20110104_1` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` int(11) NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (134.6ms)[0m  [1mCREATE TABLE `charges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `customer_id` int(11), `driver_id` int(11), `from` varchar(255), `to` varchar(255), `notes` varchar(255) DEFAULT '' NOT NULL, `notes_internal` varchar(255) DEFAULT '' NOT NULL, `price` decimal, `total` decimal NOT NULL, `written_on` date NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (181.6ms)[0m  [1mCREATE INDEX `index_charges_on_customer_id` ON `charges` (`customer_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (105.3ms)[0m  [1mCREATE INDEX `index_charges_on_driver_id` ON `charges` (`driver_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (167.8ms)[0m  [1mCREATE INDEX `index_charges_on_user_id` ON `charges` (`user_id`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (101.0ms)[0m  CREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `notes` text NOT NULL, `taxable` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime, `phone` varchar(255), `cust_type` varchar(255), `terms` tinyint(1) DEFAULT 1, `rate` decimal, `rate_orig` varchar(255), `rate_dest` varchar(255), `rate_notes` text, `rate_renewed_on` date, `active` tinyint(1) DEFAULT 0 NOT NULL, `code` varchar(255) DEFAULT '' NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (16.0ms)[0m  [1mSHOW KEYS FROM `customers`[0m
+  [1m[35mSQL (178.6ms)[0m  CREATE INDEX `index_customers_on_code` ON `customers` (`code`)
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (81.7ms)[0m  [1mCREATE TABLE `driver_shifts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `driver_id` int(11) NOT NULL, `shift` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `driver_shifts`
+  [1m[36mSQL (125.9ms)[0m  [1mCREATE INDEX `index_driver_shifts_on_driver_id` ON `driver_shifts` (`driver_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `driver_shifts`
+  [1m[36mSQL (96.2ms)[0m  [1mCREATE INDEX `index_driver_shifts_on_shift` ON `driver_shifts` (`shift`)[0m
+  [1m[35mSCHEMA (0.5ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (142.4ms)[0m  CREATE TABLE `drivers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `active` tinyint(1) DEFAULT 1 NOT NULL, `number` int(11) NOT NULL, `unit_number` int(11), `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `status` varchar(255), `shift` varchar(255), `skipped` tinyint(1) DEFAULT 0 NOT NULL, `last_random_trip` datetime NOT NULL, `last_scheduled_trip` datetime NOT NULL, `created_at` datetime, `updated_at` datetime, `unit_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (160.8ms)[0m  CREATE INDEX `index_drivers_on_active` ON `drivers` (`active`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (137.2ms)[0m  CREATE INDEX `index_drivers_on_number` ON `drivers` (`number`)
+  [1m[36mSQL (0.3ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (112.6ms)[0m  CREATE INDEX `index_drivers_on_unit_id` ON `drivers` (`unit_id`)
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (110.7ms)[0m  [1mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `distance_km` int(11), `distance_hr` decimal(4,1), `charge` decimal(8,2), `fee` decimal(8,2), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSCHEMA (0.6ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (189.1ms)[0m  CREATE TABLE `stats` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `date` date, `day_trips` int(11) DEFAULT 0 NOT NULL, `day_trips_lt` int(11) DEFAULT 0 NOT NULL, `day_trips_nt` int(11) DEFAULT 0 NOT NULL, `day_trips_ca` int(11) DEFAULT 0 NOT NULL, `day_drivers_sch` int(11) DEFAULT 0 NOT NULL, `day_drivers_act` int(11) DEFAULT 0 NOT NULL, `day_drivers_ext` int(11) DEFAULT 0 NOT NULL, `day_drivers_lft` int(11) DEFAULT 0 NOT NULL, `night_trips` int(11) DEFAULT 0 NOT NULL, `night_trips_lt` int(11) DEFAULT 0 NOT NULL, `night_trips_nt` int(11) DEFAULT 0 NOT NULL, `night_trips_ca` int(11) DEFAULT 0 NOT NULL, `night_drivers_sch` int(11) DEFAULT 0 NOT NULL, `night_drivers_act` int(11) DEFAULT 0 NOT NULL, `night_drivers_ext` int(11) DEFAULT 0 NOT NULL, `night_drivers_lft` int(11) DEFAULT 0 NOT NULL, `temp_max` float, `temp_min` float, `temp_mean` float, `holidays` varchar(255) DEFAULT '' NOT NULL, `notes` text DEFAULT '' NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (10.2ms)[0m  [1mSHOW KEYS FROM `stats`[0m
+  [1m[35mSQL (113.5ms)[0m  CREATE INDEX `index_stats_on_date` ON `stats` (`date`)
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (132.2ms)[0m  [1mCREATE TABLE `trips` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `charge` decimal, `fee` decimal, `r10` varchar(255), `comment` varchar(255), `lease` date, `scheduled` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime, `driver_id` int(11), `location_id` int(11), `user_id` int(11), `skipped` tinyint(1) DEFAULT 0 NOT NULL, `customer_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (151.4ms)[0m  [1mCREATE INDEX `index_trips_on_customer_id` ON `trips` (`customer_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (103.0ms)[0m  [1mCREATE INDEX `index_trips_on_driver_id` ON `trips` (`driver_id`)[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (133.8ms)[0m  [1mCREATE INDEX `index_trips_on_location_id` ON `trips` (`location_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (218.6ms)[0m  [1mCREATE INDEX `index_trips_on_user_id` ON `trips` (`user_id`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (137.3ms)[0m  CREATE TABLE `units` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` int(11) NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `units`[0m
+  [1m[35mSQL (127.8ms)[0m  CREATE INDEX `index_units_on_active` ON `units` (`active`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `units`[0m
+  [1m[35mSQL (124.9ms)[0m  CREATE UNIQUE INDEX `index_units_on_number` ON `units` (`number`)
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSQL (142.7ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `active` tinyint(1) DEFAULT 1 NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `initials` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime, `login` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `admin` tinyint(1) DEFAULT 0 NOT NULL, `clerk` tinyint(1) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (155.7ms)[0m  [1mCREATE INDEX `index_users_on_active` ON `users` (`active`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (84.9ms)[0m  [1mCREATE INDEX `index_users_on_admin` ON `users` (`admin`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (131.2ms)[0m  CREATE TABLE `vehicle_issues` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `driver_id` int(11), `unit_id` int(11), `odometer` int(11), `category` varchar(255), `details` text, `created_at` datetime, `completed` tinyint(1) DEFAULT 0 NOT NULL, `completed_on` date) ENGINE=InnoDB
+  [1m[36mSCHEMA (0.5ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.1ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (15.3ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110108180237')[0m
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:54:25 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"JY", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'JY' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.3ms)
+Rendered session/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 82ms (Views: 34.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:55:00 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamieyork", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamieyork' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 27ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:55:04 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamieyork", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'jamieyork' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 59ms (Views: 7.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:55:47 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamieyork", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamieyork' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.4ms)
+Rendered session/new.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 26ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/session/create" for 127.0.0.1 at 2013-08-28 14:56:45 -0600
+  Processing by SessionController#create as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" IS NULL ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 53ms (Views: 6.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 14:56:54 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamieyork", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamieyork' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 36ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/session/create" for 127.0.0.1 at 2013-08-28 14:58:39 -0600
+  Processing by SessionController#create as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" IS NULL ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 24ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/session/create" for 127.0.0.1 at 2013-08-28 15:02:24 -0600
+  Processing by SessionController#create as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" IS NULL ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 82ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:02:27 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.5ms)
+Rendered session/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 38ms (Views: 11.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:06:45 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+Completed 500 Internal Server Error in 12ms
+
+SQLite3::NotADatabaseException (file is encrypted or is not a database):
+  app/models/user.rb:16:in `<class:User>'
+  app/models/user.rb:3:in `<top (required)>'
+  app/controllers/session_controller.rb:8:in `create'
+
+Rendered /Users/Jamie/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /Users/Jamie/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/Jamie/.rbenv/versions/1.9.2-p290/lib/ruby/gems/1.9.1/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:11:50 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 140ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:11:52 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.4ms)
+Rendered session/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 57ms (Views: 35.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:19:01 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.3ms)
+Rendered session/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 27ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+  [1m[36mSQL (0.7ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("charges")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_charges_on_driver_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_charges_on_customer_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("customers")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_customers_on_code')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("driver_shifts")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_driver_shifts_on_shift')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_driver_shifts_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("drivers")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_unit_id')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_drivers_on_number')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_drivers_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("locations")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("stats")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_stats_on_date')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("trips")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_trips_on_customer_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_trips_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_trips_on_location_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_trips_on_driver_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("units")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_units_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_units_on_number')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_users_on_admin')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_info('index_users_on_active')
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("vehicle_issues")[0m
+TypeError: can't convert Arel::SelectManager into String: #<Arel::SelectManager:0x007f9efa2ad6b8>
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSQL (109.6ms)[0m  [1mCREATE TABLE `_units_old_20110104` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` integer NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSCHEMA (0.5ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (270.3ms)[0m  CREATE TABLE `_units_old_20110104_1` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` int(11) NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.2ms)[0m  SHOW TABLES 
+  [1m[36mSQL (104.6ms)[0m  [1mCREATE TABLE `charges` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `customer_id` int(11), `driver_id` int(11), `from` varchar(255), `to` varchar(255), `notes` varchar(255) DEFAULT '' NOT NULL, `notes_internal` varchar(255) DEFAULT '' NOT NULL, `price` decimal, `total` decimal NOT NULL, `written_on` date NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (90.3ms)[0m  [1mCREATE INDEX `index_charges_on_customer_id` ON `charges` (`customer_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (104.7ms)[0m  [1mCREATE INDEX `index_charges_on_driver_id` ON `charges` (`driver_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `charges`
+  [1m[36mSQL (117.8ms)[0m  [1mCREATE INDEX `index_charges_on_user_id` ON `charges` (`user_id`)[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (132.3ms)[0m  CREATE TABLE `customers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `notes` text NOT NULL, `taxable` tinyint(1) DEFAULT 1, `created_at` datetime, `updated_at` datetime, `phone` varchar(255), `cust_type` varchar(255), `terms` tinyint(1) DEFAULT 1, `rate` decimal, `rate_orig` varchar(255), `rate_dest` varchar(255), `rate_notes` text, `rate_renewed_on` date, `active` tinyint(1) DEFAULT 0 NOT NULL, `code` varchar(255) DEFAULT '' NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `customers`[0m
+  [1m[35mSQL (114.9ms)[0m  CREATE INDEX `index_customers_on_code` ON `customers` (`code`)
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSQL (104.7ms)[0m  [1mCREATE TABLE `driver_shifts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `driver_id` int(11) NOT NULL, `shift` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `driver_shifts`
+  [1m[36mSQL (131.8ms)[0m  [1mCREATE INDEX `index_driver_shifts_on_driver_id` ON `driver_shifts` (`driver_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `driver_shifts`
+  [1m[36mSQL (82.4ms)[0m  [1mCREATE INDEX `index_driver_shifts_on_shift` ON `driver_shifts` (`shift`)[0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (118.2ms)[0m  CREATE TABLE `drivers` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `active` tinyint(1) DEFAULT 1 NOT NULL, `number` int(11) NOT NULL, `unit_number` int(11), `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `status` varchar(255), `shift` varchar(255), `skipped` tinyint(1) DEFAULT 0 NOT NULL, `last_random_trip` datetime NOT NULL, `last_scheduled_trip` datetime NOT NULL, `created_at` datetime, `updated_at` datetime, `unit_id` int(11)) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (104.1ms)[0m  CREATE INDEX `index_drivers_on_active` ON `drivers` (`active`)
+  [1m[36mSQL (0.5ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (106.0ms)[0m  CREATE INDEX `index_drivers_on_number` ON `drivers` (`number`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `drivers`[0m
+  [1m[35mSQL (119.3ms)[0m  CREATE INDEX `index_drivers_on_unit_id` ON `drivers` (`unit_id`)
+  [1m[36mSCHEMA (0.5ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSQL (132.3ms)[0m  [1mCREATE TABLE `locations` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `distance_km` int(11), `distance_hr` decimal(4,1), `charge` decimal(8,2), `fee` decimal(8,2), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35mSCHEMA (0.6ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (130.8ms)[0m  CREATE TABLE `stats` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `date` date, `day_trips` int(11) DEFAULT 0 NOT NULL, `day_trips_lt` int(11) DEFAULT 0 NOT NULL, `day_trips_nt` int(11) DEFAULT 0 NOT NULL, `day_trips_ca` int(11) DEFAULT 0 NOT NULL, `day_drivers_sch` int(11) DEFAULT 0 NOT NULL, `day_drivers_act` int(11) DEFAULT 0 NOT NULL, `day_drivers_ext` int(11) DEFAULT 0 NOT NULL, `day_drivers_lft` int(11) DEFAULT 0 NOT NULL, `night_trips` int(11) DEFAULT 0 NOT NULL, `night_trips_lt` int(11) DEFAULT 0 NOT NULL, `night_trips_nt` int(11) DEFAULT 0 NOT NULL, `night_trips_ca` int(11) DEFAULT 0 NOT NULL, `night_drivers_sch` int(11) DEFAULT 0 NOT NULL, `night_drivers_act` int(11) DEFAULT 0 NOT NULL, `night_drivers_ext` int(11) DEFAULT 0 NOT NULL, `night_drivers_lft` int(11) DEFAULT 0 NOT NULL, `temp_max` float, `temp_min` float, `temp_mean` float, `holidays` varchar(255) DEFAULT '' NOT NULL, `notes` text DEFAULT '' NOT NULL, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `stats`[0m
+  [1m[35mSQL (103.3ms)[0m  CREATE INDEX `index_stats_on_date` ON `stats` (`date`)
+  [1m[36mSCHEMA (0.4ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSQL (102.2ms)[0m  [1mCREATE TABLE `trips` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `charge` decimal, `fee` decimal, `r10` varchar(255), `comment` varchar(255), `lease` date, `scheduled` tinyint(1) DEFAULT 0 NOT NULL, `created_at` datetime, `updated_at` datetime, `driver_id` int(11), `location_id` int(11), `user_id` int(11), `skipped` tinyint(1) DEFAULT 0 NOT NULL, `customer_id` int(11)) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (120.8ms)[0m  [1mCREATE INDEX `index_trips_on_customer_id` ON `trips` (`customer_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (124.2ms)[0m  [1mCREATE INDEX `index_trips_on_driver_id` ON `trips` (`driver_id`)[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (111.0ms)[0m  [1mCREATE INDEX `index_trips_on_location_id` ON `trips` (`location_id`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `trips`
+  [1m[36mSQL (119.8ms)[0m  [1mCREATE INDEX `index_trips_on_user_id` ON `trips` (`user_id`)[0m
+  [1m[35mSCHEMA (0.6ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.5ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (133.2ms)[0m  CREATE TABLE `units` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `number` int(11) NOT NULL, `description` varchar(255), `created_on` date, `active` tinyint(1) DEFAULT 1 NOT NULL) ENGINE=InnoDB
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW KEYS FROM `units`[0m
+  [1m[35mSQL (143.6ms)[0m  CREATE INDEX `index_units_on_active` ON `units` (`active`)
+  [1m[36mSQL (0.4ms)[0m  [1mSHOW KEYS FROM `units`[0m
+  [1m[35mSQL (96.1ms)[0m  CREATE UNIQUE INDEX `index_units_on_number` ON `units` (`number`)
+  [1m[36mSCHEMA (0.6ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.5ms)[0m  SHOW TABLES 
+  [1m[36mSQL (119.6ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `active` tinyint(1) DEFAULT 1 NOT NULL, `first_name` varchar(255) NOT NULL, `last_name` varchar(255) NOT NULL, `initials` varchar(255) NOT NULL, `created_at` datetime, `updated_at` datetime, `login` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `admin` tinyint(1) DEFAULT 0 NOT NULL, `clerk` tinyint(1) DEFAULT 0 NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.4ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (112.4ms)[0m  [1mCREATE INDEX `index_users_on_active` ON `users` (`active`)[0m
+  [1m[35mSQL (0.3ms)[0m  SHOW KEYS FROM `users`
+  [1m[36mSQL (100.3ms)[0m  [1mCREATE INDEX `index_users_on_admin` ON `users` (`admin`)[0m
+  [1m[35mSCHEMA (0.6ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (108.5ms)[0m  CREATE TABLE `vehicle_issues` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `driver_id` int(11), `unit_id` int(11), `odometer` int(11), `category` varchar(255), `details` text, `created_at` datetime, `completed` tinyint(1) DEFAULT 0 NOT NULL, `completed_on` date) ENGINE=InnoDB
+  [1m[36mSCHEMA (0.5ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSCHEMA (0.3ms)[0m  SHOW TABLES 
+  [1m[36mSQL (115.3ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35mSQL (0.5ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36mSQL (131.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35mSCHEMA (0.4ms)[0m  SHOW TABLES 
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mSQL (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36mSQL (15.0ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110108180237')[0m
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:42:30 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1
+Rendered layouts/_menu.html.erb (0.3ms)
+Rendered session/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 39ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:42:33 -0600
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."login" = 'jamie' ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 53ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2013-08-28 15:43:13 -0600
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /private/var/www/vhosts/www.aplustaxi.ca/app/controllers/application_controller.rb:1)
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r2Ys4cDHdxQxScnoovz76KY0n4oXFcgA3dDzPAIdVpc=", "login"=>"jamie", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mSCHEMA (0.7ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`login` = 'jamie' ORDER BY initials LIMIT 1
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 61ms
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:43:14 -0600
+  Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (3.3ms)
+Rendered session/new.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/driver_shifts" for 127.0.0.1 at 2013-08-28 15:43:16 -0600
+  Processing by DriverShiftsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mDriverShift Load (10.5ms)[0m  [1mSELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` ORDER BY driver_shifts.shift, drivers.number[0m
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered driver_shifts/index.html.erb within layouts/application (88.2ms)
+Completed 200 OK in 128ms (Views: 81.3ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/charges" for 127.0.0.1 at 2013-08-28 15:43:20 -0600
+  Processing by ChargesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.8ms)[0m  [1mSELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name[0m
+  [1m[35mCharge Load (15.8ms)[0m  SELECT charges.*, users.initials AS user_initials,
+ customers.name AS customer_name, drivers.number AS driver_number FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2013-07-28 21:43:20') AND DATE('2013-08-28 21:43:20')) ORDER BY written_on desc LIMIT 20 OFFSET 0
+Rendered layouts/_menu_admin.html.erb (2.9ms)
+Rendered charges/index.html.erb within layouts/application (175.8ms)
+Completed 200 OK in 276ms (Views: 162.7ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2013-08-28 15:43:22 -0600
+  Processing by CustomersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCustomer Load (14.6ms)[0m  SELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0
+Rendered customers/_customer.html.erb (59.6ms)
+Rendered layouts/_menu_admin.html.erb (2.3ms)
+Rendered customers/index.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 140ms (Views: 86.0ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2013-08-28 15:43:26 -0600
+  Processing by LocationsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mLocation Load (0.6ms)[0m  SELECT `locations`.* FROM `locations` ORDER BY name LIMIT 20 OFFSET 0
+Rendered layouts/_menu_admin.html.erb (2.5ms)
+Rendered locations/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 80ms (Views: 19.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/trips/queue" for 127.0.0.1 at 2013-08-28 15:43:28 -0600
+  Processing by TripsController#queue as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mSQL (1.4ms)[0m  SELECT COUNT(DISTINCT `driver_shifts`.`id`) FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` WHERE `driver_shifts`.`shift` = 'D' AND `drivers`.`active` = 1 AND (drivers.id IS NOT NULL)
+  [1m[36mDriverShift Load (0.7ms)[0m  [1mSELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` WHERE `driver_shifts`.`shift` = 'D' AND `drivers`.`active` = 1 AND (drivers.id IS NOT NULL) ORDER BY last_random_trip asc[0m
+Rendered layouts/_menu_admin.html.erb (2.3ms)
+Rendered trips/queue.html.erb within layouts/application (38.0ms)
+Completed 200 OK in 122ms (Views: 39.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/trips" for 127.0.0.1 at 2013-08-28 15:43:29 -0600
+  Processing by TripsController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `trips`[0m
+  [1m[35mTrip Load (0.4ms)[0m  SELECT `trips`.* FROM `trips` ORDER BY trips.created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mDriver Load (9.8ms)[0m  [1mSELECT `drivers`.* FROM `drivers` WHERE (`drivers`.`id` IN (1,7,6,2,8))[0m
+  [1m[35mCustomer Load (0.5ms)[0m  SELECT `customers`.* FROM `customers` WHERE (`customers`.`id` IN (21,1,16))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `trips`[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.3ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.5ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190962 ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (2.8ms)
+Rendered trips/index.html.erb within layouts/application (204.1ms)
+Completed 200 OK in 243ms (Views: 194.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/stats" for 127.0.0.1 at 2013-08-28 15:43:30 -0600
+  Processing by StatsController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 52ms
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:43:30 -0600
+  Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (2.7ms)
+Rendered session/new.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 38ms (Views: 37.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/units" for 127.0.0.1 at 2013-08-28 15:43:30 -0600
+  Processing by UnitsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUnit Load (0.6ms)[0m  [1mSELECT `units`.* FROM `units` ORDER BY number[0m
+Rendered layouts/_menu_admin.html.erb (3.3ms)
+Rendered units/index.html.erb within layouts/application (17.7ms)
+Completed 200 OK in 59ms (Views: 21.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-28 15:43:31 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY initials, initials[0m
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered users/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 38ms (Views: 12.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/vehicle_issues" for 127.0.0.1 at 2013-08-28 15:43:32 -0600
+  Processing by VehicleIssuesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUnit Load (0.4ms)[0m  [1mSELECT `units`.* FROM `units` WHERE `units`.`active` = 1 ORDER BY number[0m
+  [1m[35mVehicleIssue Load (0.5ms)[0m  SELECT `vehicle_issues`.* FROM `vehicle_issues` WHERE (completed_on IS NULL) ORDER BY vehicle_issues.created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (`users`.`id` IN (980190962,980190963))[0m
+  [1m[35mDriver Load (0.3ms)[0m  SELECT `drivers`.* FROM `drivers` WHERE (`drivers`.`id` IN (1,7,6,8,2))
+  [1m[36mUnit Load (0.6ms)[0m  [1mSELECT `units`.* FROM `units` WHERE (`units`.`id` IN (3,5,6,4,1))[0m
+Rendered layouts/_menu_admin.html.erb (3.2ms)
+Rendered vehicle_issues/index.html.erb within layouts/application (115.9ms)
+Completed 200 OK in 154ms (Views: 117.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-28 15:43:36 -0600
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/home (2.1ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:43:38 -0600
+  Processing by SessionController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+Rendered layouts/_menu_admin.html.erb (2.8ms)
+Rendered session/new.html.erb within layouts/application (65.2ms)
+Completed 200 OK in 70ms (Views: 69.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/vehicle_issues" for 127.0.0.1 at 2013-08-28 15:43:40 -0600
+  Processing by VehicleIssuesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mUnit Load (0.3ms)[0m  SELECT `units`.* FROM `units` WHERE `units`.`active` = 1 ORDER BY number
+  [1m[36mVehicleIssue Load (0.2ms)[0m  [1mSELECT `vehicle_issues`.* FROM `vehicle_issues` WHERE (completed_on IS NULL) ORDER BY vehicle_issues.created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` IN (980190962,980190963))
+  [1m[36mDriver Load (0.3ms)[0m  [1mSELECT `drivers`.* FROM `drivers` WHERE (`drivers`.`id` IN (1,7,6,8,2))[0m
+  [1m[35mUnit Load (0.2ms)[0m  SELECT `units`.* FROM `units` WHERE (`units`.`id` IN (3,5,6,4,1))
+Rendered layouts/_menu_admin.html.erb (2.6ms)
+Rendered vehicle_issues/index.html.erb within layouts/application (153.0ms)
+Completed 200 OK in 206ms (Views: 155.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-28 15:53:10 -0600
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/home (8.1ms)
+Completed 200 OK in 55ms (Views: 53.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:53:13 -0600
+  Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (4.4ms)
+Rendered session/new.html.erb within layouts/application (239.9ms)
+Completed 200 OK in 262ms (Views: 261.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2013-08-28 15:53:14 -0600
+  Processing by CustomersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0[0m
+Rendered customers/_customer.html.erb (83.3ms)
+Rendered layouts/_menu_admin.html.erb (3.3ms)
+Rendered customers/index.html.erb within layouts/application (121.8ms)
+Completed 200 OK in 269ms (Views: 141.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/customers?utf8=%E2%9C%93&q=&type=Regular&terms=&expired=&active=&commit=Submit" for 127.0.0.1 at 2013-08-28 15:53:18 -0600
+  Processing by CustomersController#index as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"", "type"=>"Regular", "terms"=>"", "expired"=>"", "active"=>"", "commit"=>"Submit"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT `customers`.* FROM `customers` WHERE `customers`.`cust_type` = 'Regular' ORDER BY customers.name LIMIT 20 OFFSET 0[0m
+Rendered customers/_customer.html.erb (67.7ms)
+Rendered layouts/_menu_admin.html.erb (2.9ms)
+Rendered customers/index.html.erb within layouts/application (79.6ms)
+Completed 200 OK in 128ms (Views: 81.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/17/edit" for 127.0.0.1 at 2013-08-28 15:53:20 -0600
+  Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (12.0ms)[0m  [1mSELECT `customers`.* FROM `customers` WHERE `customers`.`id` = 17 LIMIT 1[0m
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from block in _app_views_customers__form_html_erb___860414722593744164_70117254695360__2234498322124670082 at /private/var/www/vhosts/www.aplustaxi.ca/app/views/customers/_form.html.erb:2)
+Rendered customers/_form.html.erb (21.5ms)
+Rendered layouts/_menu_admin.html.erb (12.5ms)
+Rendered customers/edit.html.erb within layouts/application (60.7ms)
+Completed 200 OK in 157ms (Views: 75.9ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-28 15:55:20 -0600
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/home (1.9ms)
+Completed 200 OK in 30ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:55:22 -0600
+  Processing by SessionController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+Rendered layouts/_menu_admin.html.erb (2.7ms)
+Rendered session/new.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 36ms (Views: 36.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/stats" for 127.0.0.1 at 2013-08-28 15:55:25 -0600
+  Processing by StatsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/login
+Completed 302 Found in 25ms
+
+
+Started GET "/login" for 127.0.0.1 at 2013-08-28 15:55:25 -0600
+  Processing by SessionController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+Rendered layouts/_menu_admin.html.erb (2.9ms)
+Rendered session/new.html.erb within layouts/application (60.2ms)
+Completed 200 OK in 63ms (Views: 62.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/units" for 127.0.0.1 at 2013-08-28 15:55:26 -0600
+  Processing by UnitsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mUnit Load (0.2ms)[0m  SELECT `units`.* FROM `units` ORDER BY number
+Rendered layouts/_menu_admin.html.erb (3.5ms)
+Rendered units/index.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 103ms (Views: 29.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-28 15:55:27 -0600
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` ORDER BY initials, initials
+Rendered layouts/_menu_admin.html.erb (2.6ms)
+Rendered users/index.html.erb within layouts/application (36.8ms)
+Completed 200 OK in 66ms (Views: 40.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/vehicle_issues" for 127.0.0.1 at 2013-08-28 15:55:29 -0600
+  Processing by VehicleIssuesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mUnit Load (0.3ms)[0m  SELECT `units`.* FROM `units` WHERE `units`.`active` = 1 ORDER BY number
+  [1m[36mVehicleIssue Load (0.2ms)[0m  [1mSELECT `vehicle_issues`.* FROM `vehicle_issues` WHERE (completed_on IS NULL) ORDER BY vehicle_issues.created_at DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (`users`.`id` IN (980190962,980190963))
+  [1m[36mDriver Load (0.1ms)[0m  [1mSELECT `drivers`.* FROM `drivers` WHERE (`drivers`.`id` IN (1,7,6,8,2))[0m
+  [1m[35mUnit Load (0.3ms)[0m  SELECT `units`.* FROM `units` WHERE (`units`.`id` IN (3,5,6,4,1))
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered vehicle_issues/index.html.erb within layouts/application (164.1ms)
+Completed 200 OK in 229ms (Views: 178.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2013-08-28 15:55:30 -0600
+  Processing by CustomersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0
+Rendered customers/_customer.html.erb (28.3ms)
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered customers/index.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 140ms (Views: 41.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges" for 127.0.0.1 at 2013-08-28 15:55:32 -0600
+  Processing by ChargesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name
+  [1m[36mCharge Load (0.8ms)[0m  [1mSELECT charges.*, users.initials AS user_initials,
+ customers.name AS customer_name, drivers.number AS driver_number FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2013-07-28 21:55:32') AND DATE('2013-08-28 21:55:32')) ORDER BY written_on desc LIMIT 20 OFFSET 0[0m
+Rendered layouts/_menu_admin.html.erb (2.7ms)
+Rendered charges/index.html.erb within layouts/application (138.9ms)
+Completed 200 OK in 210ms (Views: 141.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/driver_shifts" for 127.0.0.1 at 2013-08-28 15:55:33 -0600
+  Processing by DriverShiftsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mDriverShift Load (0.3ms)[0m  [1mSELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` ORDER BY driver_shifts.shift, drivers.number[0m
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered driver_shifts/index.html.erb within layouts/application (83.8ms)
+Completed 200 OK in 147ms (Views: 87.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2013-08-28 15:55:40 -0600
+  Processing by CustomersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.3ms)[0m  [1mSELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0[0m
+Rendered customers/_customer.html.erb (28.0ms)
+Rendered layouts/_menu_admin.html.erb (2.5ms)
+Rendered customers/index.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 108ms (Views: 40.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-08-28 15:55:42 -0600
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY initials, initials[0m
+Rendered layouts/_menu_admin.html.erb (2.4ms)
+Rendered users/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 37ms (Views: 12.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2013-08-28 15:55:44 -0600
+  Processing by UsersController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+DEPRECATION WARNING: f.error_messages was removed from Rails and is now available as a plugin. Please install it with `rails plugin install git://github.com/rails/dynamic_form.git`. (called from _app_views_users__form_html_erb__4173846798217227283_70117255286220__2234498322124670082 at /private/var/www/vhosts/www.aplustaxi.ca/app/views/users/_form.html.erb:1)
+Rendered users/_form.html.erb (7.0ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_users_new_html_erb__2401997615063380863_70117255598900_2772742434210685422 at /private/var/www/vhosts/www.aplustaxi.ca/app/views/users/new.html.erb:3)
+Rendered layouts/_menu_admin.html.erb (2.6ms)
+Rendered users/new.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 87ms (Views: 34.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2020-11-18 06:23:54 +0100
+  Processing by PagesController#index as HTML
+Rendered pages/index.html.erb within layouts/home (1.7ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-18 06:23:59 +0100
+  Processing by SessionController#new as HTML
+Rendered layouts/_menu.html.erb (0.2ms)
+Rendered session/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session/create" for 127.0.0.1 at 2020-11-18 06:26:48 +0100
+  Processing by SessionController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EC0nX7lJwAmJOzL1nh9zuIfSm1gYfTXzz6fz/5i3W/g=", "login"=>"media32", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mSCHEMA (0.3ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`login` = 'media32' ORDER BY initials LIMIT 1
+Redirected to http://localhost:3000/login
+Completed 302 Found in 29ms
+
+
+Started GET "/login" for 127.0.0.1 at 2020-11-18 06:26:49 +0100
+  Processing by SessionController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (2.6ms)
+Rendered session/new.html.erb within layouts/application (82.1ms)
+Completed 200 OK in 86ms (Views: 84.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/driver_shifts" for 127.0.0.1 at 2020-11-18 06:26:52 +0100
+  Processing by DriverShiftsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mDriverShift Load (0.3ms)[0m  [1mSELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` ORDER BY driver_shifts.shift, drivers.number[0m
+Rendered layouts/_menu_admin.html.erb (1.3ms)
+Rendered driver_shifts/index.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 88ms (Views: 58.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/charges" for 127.0.0.1 at 2020-11-18 06:26:54 +0100
+  Processing by ChargesController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (2.8ms)[0m  [1mSELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name[0m
+  [1m[35mCharge Load (41.8ms)[0m  SELECT charges.*, users.initials AS user_initials,
+ customers.name AS customer_name, drivers.number AS driver_number FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:26:54') AND DATE('2020-11-18 05:26:54')) ORDER BY written_on desc LIMIT 20 OFFSET 0
+  [1m[36mSQL (35.3ms)[0m  [1mSELECT COUNT(*) FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:26:54') AND DATE('2020-11-18 05:26:54'))[0m
+Rendered layouts/_menu_admin.html.erb (1.6ms)
+Rendered charges/index.html.erb within layouts/application (165.3ms)
+Completed 200 OK in 213ms (Views: 87.5ms | ActiveRecord: 80.1ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2020-11-18 06:26:55 +0100
+  Processing by CustomersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.8ms)[0m  [1mSELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `customers`
+Rendered customers/_customer.html.erb (10.7ms)
+Rendered layouts/_menu_admin.html.erb (1.9ms)
+Rendered customers/index.html.erb within layouts/application (43.7ms)
+Completed 200 OK in 72ms (Views: 44.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/drivers" for 127.0.0.1 at 2020-11-18 06:26:56 +0100
+  Processing by DriversController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mDriver Load (0.3ms)[0m  SELECT `drivers`.* FROM `drivers` ORDER BY number LIMIT 20 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `drivers`[0m
+Rendered layouts/_menu_admin.html.erb (3.0ms)
+Rendered drivers/index.html.erb within layouts/application (50.4ms)
+Completed 200 OK in 77ms (Views: 52.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/locations" for 127.0.0.1 at 2020-11-18 06:26:56 +0100
+  Processing by LocationsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.4ms)[0m  [1mSELECT `locations`.* FROM `locations` ORDER BY name LIMIT 20 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `locations`
+Rendered layouts/_menu_admin.html.erb (1.4ms)
+Rendered locations/index.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 58ms (Views: 16.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/trips/queue" for 127.0.0.1 at 2020-11-18 06:26:57 +0100
+  Processing by TripsController#queue as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(DISTINCT `driver_shifts`.`id`) FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` WHERE `driver_shifts`.`shift` = 'D' AND `drivers`.`active` = 1 AND (drivers.id IS NOT NULL)
+  [1m[36mDriverShift Load (0.5ms)[0m  [1mSELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` WHERE `driver_shifts`.`shift` = 'D' AND `drivers`.`active` = 1 AND (drivers.id IS NOT NULL) ORDER BY last_random_trip asc[0m
+Rendered layouts/_menu_admin.html.erb (2.1ms)
+Rendered trips/queue.html.erb within layouts/application (26.2ms)
+Completed 200 OK in 81ms (Views: 27.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/trips" for 127.0.0.1 at 2020-11-18 06:26:57 +0100
+  Processing by TripsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1mSELECT COUNT(*) FROM `trips`[0m
+  [1m[35mTrip Load (1.5ms)[0m  SELECT `trips`.* FROM `trips` ORDER BY trips.created_at DESC LIMIT 20 OFFSET 0
+  [1m[36mDriver Load (0.2ms)[0m  [1mSELECT `drivers`.* FROM `drivers` WHERE (`drivers`.`id` IN (96,70,90,50,86,84,78,36,92,23,91))[0m
+  [1m[35mCustomer Load (0.3ms)[0m  SELECT `customers`.* FROM `customers` WHERE (`customers`.`id` IN (160,470,628))
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `trips`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 30 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190980 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190967 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 48 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 64 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190967 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 18 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 86 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190980 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 13 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190980 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190980 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.2ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 37 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 30 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190988 ORDER BY initials LIMIT 1
+  [1m[36mLocation Load (0.1ms)[0m  [1mSELECT `locations`.* FROM `locations` WHERE `locations`.`id` = 96 LIMIT 1[0m
+Rendered layouts/_menu_admin.html.erb (1.3ms)
+Rendered trips/index.html.erb within layouts/application (108.3ms)
+Completed 200 OK in 151ms (Views: 106.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/stats" for 127.0.0.1 at 2020-11-18 06:26:58 +0100
+  Processing by StatsController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `stats`[0m
+  [1m[35mStat Load (0.5ms)[0m  SELECT `stats`.* FROM `stats` ORDER BY date DESC LIMIT 20 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM `stats`[0m
+Rendered layouts/_menu_admin.html.erb (1.6ms)
+Rendered stats/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 47ms (Views: 25.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2020-11-18 06:26:59 +0100
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY initials, initials[0m
+Rendered layouts/_menu_admin.html.erb (1.4ms)
+Rendered users/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 41ms (Views: 22.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/vehicle_issues" for 127.0.0.1 at 2020-11-18 06:27:00 +0100
+  Processing by VehicleIssuesController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mUnit Load (0.2ms)[0m  [1mSELECT `units`.* FROM `units` WHERE `units`.`active` = 1 ORDER BY number[0m
+  [1m[35mVehicleIssue Load (0.2ms)[0m  SELECT `vehicle_issues`.* FROM `vehicle_issues` WHERE (completed_on IS NULL) ORDER BY vehicle_issues.created_at DESC LIMIT 20 OFFSET 0
+Rendered layouts/_menu_admin.html.erb (1.5ms)
+Rendered vehicle_issues/index.html.erb within layouts/application (16.8ms)
+Completed 200 OK in 55ms (Views: 18.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/driver_shifts" for 127.0.0.1 at 2020-11-18 06:27:04 +0100
+  Processing by DriverShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mDriverShift Load (0.7ms)[0m  SELECT `driver_shifts`.`id` AS t0_r0, `driver_shifts`.`driver_id` AS t0_r1, `driver_shifts`.`shift` AS t0_r2, `driver_shifts`.`created_at` AS t0_r3, `driver_shifts`.`updated_at` AS t0_r4, `drivers`.`id` AS t1_r0, `drivers`.`active` AS t1_r1, `drivers`.`number` AS t1_r2, `drivers`.`unit_number` AS t1_r3, `drivers`.`first_name` AS t1_r4, `drivers`.`last_name` AS t1_r5, `drivers`.`status` AS t1_r6, `drivers`.`shift` AS t1_r7, `drivers`.`skipped` AS t1_r8, `drivers`.`last_random_trip` AS t1_r9, `drivers`.`last_scheduled_trip` AS t1_r10, `drivers`.`created_at` AS t1_r11, `drivers`.`updated_at` AS t1_r12, `drivers`.`unit_id` AS t1_r13 FROM `driver_shifts` LEFT OUTER JOIN `drivers` ON `drivers`.`id` = `driver_shifts`.`driver_id` ORDER BY driver_shifts.shift, drivers.number
+Rendered layouts/_menu_admin.html.erb (1.3ms)
+Rendered driver_shifts/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 67ms (Views: 29.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/charges" for 127.0.0.1 at 2020-11-18 06:27:07 +0100
+  Processing by ChargesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCustomer Load (2.6ms)[0m  SELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name
+  [1m[36mCharge Load (26.4ms)[0m  [1mSELECT charges.*, users.initials AS user_initials,
+ customers.name AS customer_name, drivers.number AS driver_number FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:07') AND DATE('2020-11-18 05:27:07')) ORDER BY written_on desc LIMIT 20 OFFSET 0[0m
+  [1m[35mSQL (20.9ms)[0m  SELECT COUNT(*) FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:07') AND DATE('2020-11-18 05:27:07'))
+Rendered layouts/_menu_admin.html.erb (1.5ms)
+Rendered charges/index.html.erb within layouts/application (167.0ms)
+Completed 200 OK in 195ms (Views: 119.0ms | ActiveRecord: 50.1ms)
+
+
+Started GET "/charges/report?summary=1" for 127.0.0.1 at 2020-11-18 06:27:10 +0100
+  Processing by ChargesController#report as HTML
+  Parameters: {"summary"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCharge Load (0.3ms)[0m  SELECT customers.name AS customer_name, charges.*, COUNT(written_on) AS trip_count, SUM(price) AS price, SUM(total) AS total FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:10') AND DATE('2020-11-18 05:27:10')) GROUP BY customers.id, written_on ORDER BY customers.name, charges.written_on
+Mysql2::Error: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'aplustaxi_dev.charges.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT customers.name AS customer_name, charges.*, COUNT(written_on) AS trip_count, SUM(price) AS price, SUM(total) AS total FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:10') AND DATE('2020-11-18 05:27:10')) GROUP BY customers.id, written_on ORDER BY customers.name, charges.written_on
+Rendered charges/reports/summary.html.erb within layouts/print (136.7ms)
+Completed 500 Internal Server Error in 165ms
+
+ActionView::Template::Error (Mysql2::Error: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'aplustaxi_dev.charges.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT customers.name AS customer_name, charges.*, COUNT(written_on) AS trip_count, SUM(price) AS price, SUM(total) AS total FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:10') AND DATE('2020-11-18 05:27:10')) GROUP BY customers.id, written_on ORDER BY customers.name, charges.written_on):
+    3: <table>
+    4: 
+    5: <% last_customer = nil %>
+    6: <% @charges.each_with_index do |c, i| %>
+    7:   <% if c.customer_name != last_customer %>
+    8:     <tr>
+    9:     <td colspan="5">
+  app/views/charges/reports/summary.html.erb:6:in `_app_views_charges_reports_summary_html_erb___3876961380993904020_69953848707440__3995602403127956769'
+  app/controllers/charges_controller.rb:38:in `report'
+
+Rendered /home/engineer/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.7ms)
+  [1m[36mCharge Load (0.3ms)[0m  [1mSELECT customers.name AS customer_name, charges.*, COUNT(written_on) AS trip_count, SUM(price) AS price, SUM(total) AS total FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:10') AND DATE('2020-11-18 05:27:10')) GROUP BY customers.id, written_on ORDER BY customers.name, charges.written_on[0m
+Mysql2::Error: Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'aplustaxi_dev.charges.id' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by: SELECT customers.name AS customer_name, charges.*, COUNT(written_on) AS trip_count, SUM(price) AS price, SUM(total) AS total FROM `charges` INNER JOIN `customers` ON `customers`.`id` = `charges`.`customer_id` INNER JOIN `users` ON `users`.`id` = `charges`.`user_id` INNER JOIN `drivers` ON `drivers`.`id` = `charges`.`driver_id` WHERE (charges.written_on BETWEEN DATE('2020-10-18 04:27:10') AND DATE('2020-11-18 05:27:10')) GROUP BY customers.id, written_on ORDER BY customers.name, charges.written_on
+Rendered /home/engineer/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.4ms)
+Rendered /home/engineer/.rvm/gems/ruby-1.9.3-p551/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (22.0ms)
+
+
+Started GET "/charges/new" for 127.0.0.1 at 2020-11-18 06:27:19 +0100
+  Processing by ChargesController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name LIMIT 1[0m
+  [1m[35mCustomer Load (1.9ms)[0m  SELECT id, cust_type, name, rate, notes FROM `customers` WHERE `customers`.`active` = 1 AND `customers`.`terms` = 1 ORDER BY name
+  [1m[36mDriver Load (0.2ms)[0m  [1mSELECT `drivers`.* FROM `drivers` WHERE `drivers`.`active` = 1[0m
+Rendered charges/_form.html.erb (48.2ms)
+Rendered layouts/_menu_admin.html.erb (1.6ms)
+Rendered charges/new.html.erb within layouts/application (53.3ms)
+Completed 200 OK in 115ms (Views: 53.4ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/customers" for 127.0.0.1 at 2020-11-18 06:27:21 +0100
+  Processing by CustomersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mCustomer Load (0.7ms)[0m  [1mSELECT `customers`.* FROM `customers` ORDER BY customers.name LIMIT 20 OFFSET 0[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `customers`
+Rendered customers/_customer.html.erb (34.2ms)
+Rendered layouts/_menu_admin.html.erb (1.7ms)
+Rendered customers/index.html.erb within layouts/application (45.9ms)
+Completed 200 OK in 75ms (Views: 46.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/customers/6/edit" for 127.0.0.1 at 2020-11-18 06:27:23 +0100
+  Processing by CustomersController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mCustomer Load (0.2ms)[0m  SELECT `customers`.* FROM `customers` WHERE `customers`.`id` = 6 LIMIT 1
+Rendered customers/_form.html.erb (4.5ms)
+Rendered layouts/_menu_admin.html.erb (1.6ms)
+Rendered customers/edit.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 57ms (Views: 19.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/drivers" for 127.0.0.1 at 2020-11-18 06:27:25 +0100
+  Processing by DriversController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1[0m
+  [1m[35mDriver Load (0.6ms)[0m  SELECT `drivers`.* FROM `drivers` ORDER BY number LIMIT 20 OFFSET 0
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `drivers`[0m
+Rendered layouts/_menu_admin.html.erb (1.4ms)
+Rendered drivers/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 76ms (Views: 28.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/drivers" for 127.0.0.1 at 2020-11-18 06:33:01 +0100
+  Processing by DriversController#index as HTML
+  [1m[36mSCHEMA (0.2ms)[0m  [1mSHOW TABLES [0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 980190966 ORDER BY initials LIMIT 1
+  [1m[36mDriver Load (0.2ms)[0m  [1mSELECT `drivers`.* FROM `drivers` ORDER BY number LIMIT 20 OFFSET 0[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `drivers`
+Rendered layouts/_menu_admin.html.erb (1.5ms)
+Rendered drivers/index.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 90ms (Views: 47.6ms | ActiveRecord: 0.9ms)

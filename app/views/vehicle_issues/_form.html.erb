@@ -1,0 +1,34 @@
+<%= form_for @vehicle_issue do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <li>
+    <%= f.label :driver_id %>
+    <%= f.collection_select :driver_id, Driver.active.order(:number), :id, :detail %>
+  </li>
+  <li>
+    <%= f.label :unit_id %>
+    <%= f.collection_select :unit_id, Unit.active.order(:number), :id, :number, :include_blank => true %>
+  </li>
+  <li>
+    <%= f.label :odometer %>
+    <%= f.text_field :odometer %>
+  </li>
+  <li>
+    <%= f.label :category %>
+    <%= f.select :category, VehicleIssue::CATEGORIES %>
+  </li>
+  <li>
+    <%= f.label :details %>
+    <%= f.text_area :details, :rows => 5 %>
+  </li>
+  <% if current_user.admin? %>
+    <li>
+      <%= f.label :completed_on %>
+      <%= f.date_select :completed_on, :include_blank => true %>
+    </li>
+  <% end %>
+  <li>
+    <%= f.submit "Save" %>
+  </li>
+  </ol>
+<% end %>

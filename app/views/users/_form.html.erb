@@ -1,0 +1,42 @@
+<%= form.error_messages %>
+<ol>
+<li>
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name %>
+</li>
+<li>
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name %>
+</li>
+<li>
+  <%= form.label :initials %>
+  <%= form.text_field :initials, :maxlength => 3 %>
+</li>
+<li>
+  <%= form.label :login %>
+  <%= form.text_field :login %>
+</li>
+<li>
+  <%= form.label :password %>
+  <%= form.password_field :password %>
+</li>
+<li>
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation %>
+</li>
+<li>
+  <%= form.label :active %>
+  <%= form.check_box :active %>
+</li>
+<li>
+  <%= form.label :clerk %>
+  <%= form.check_box :clerk %>
+</li>
+<li>
+  <%= form.label :admin %>
+  <%= form.check_box :admin %>
+</li>
+<li>
+  <%= form.submit "Save" %>
+</li>
+</ol>

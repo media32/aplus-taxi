@@ -1,0 +1,83 @@
+<h1>Vehicle Issues</h1>
+
+<ul id="submenu">
+  <li><%= link_to "New", new_vehicle_issue_path %></li>
+  <li><%= link_to "Print Report", report_vehicle_issues_path(:q => params[:q],
+    :completed => params[:completed],
+    :from => date_from,
+    :to => date_to,
+    :unit => params[:unit],
+    :active => params[:active]), {:target => '_blank'} %></li>
+</ul>
+
+<%= form_tag vehicle_issues_path, :method => :get do %>
+  <ol>
+  <li>
+      <%= label_tag :q, "Search" %>
+      <%= search_field_tag :q, params[:q], :size => 40 %>
+  </li>
+  <li>
+      <%= label_tag :completed %>
+      <%= select_tag :completed, options_for_select([['', ''], ['Yes', 1], ['No', 0]], params[:completed]) %>
+  </li>
+  <li>
+      <%= label_tag :date %>
+      <%= tag :input, :type => "date", :name => "from", :min => "2009-01-01", :max => Date.today, :value => date_from %>
+      to <%= tag :input, :type => "date", :name => "to", :min => "2009-01-01", :max => Date.today, :value => date_to %>
+  </li>
+  <li>
+      <%= label_tag :unit %>
+      <%= select_tag :unit, options_for_select([''] + Unit.active.order(:number).map {|u| [u.to_s, u.id]}, params[:unit]) %>
+  </li>
+  <li>
+      <%= label_tag :active, "Unit active" %>
+      <%= select_tag :active, options_for_select({'' => '', 'Yes' => 1, 'No' => 0}, params[:active]) %>
+  </li>
+  <li>
+      <%= submit_tag "Submit" %>
+  </li>
+  </ol>
+<% end %>
+
+<%= form_tag vehicle_issues_path, :method => :put do %>
+<table id="vehicle_issues" class="list">
+<tr>
+  <th></th>
+  <th>User</th>
+  <th>Driver</th>
+  <th>Unit</th>
+  <th>Odometer</th>
+  <th>Category</th>
+  <th>Details</th>
+  <th>Created</th>
+  <th>Completed</th>
+  <th></th>
+</tr>
+<% @vehicle_issues.each do |issue| %>
+  <tr>
+    <td><%= check_box_tag 'id[]', "#{issue.to_param}", nil, :id => "id_#{issue.id}" %></td>
+    <td><%= issue.user.initials if issue.user %></td>
+    <td><%= issue.driver %></td>
+    <td<%=raw ' style="text-decoration: line-through"' if issue.unit and !issue.unit.active %>><%= issue.unit.number if issue.unit %></td>
+    <td><%= issue.odometer %></td>
+    <td><%= issue.category %></td>
+    <td><%= issue.details %></td>
+    <td style="white-space: nowrap"><%= issue.created_at.to_s %></td>
+    <td><%= image_tag 'yes.png' if issue.completed? %></td>
+    <td><%= link_to "Edit", edit_vehicle_issue_path(issue) %></td>
+  </tr>
+<% end %>
+</table>
+
+<p>Select: <a href="#" id="all">All</a>, <a href="#" id="none">None</a></p>
+<% if current_user.admin? %>
+  <p>
+    <%= label_tag :date, "Completed:" %>
+    <%= select_date Date.today %>
+    <%= submit_tag 'Save Selected' %>
+  </p>
+<% end %>
+
+<% end %>
+
+<%= will_paginate @issues %>

@@ -1,0 +1,48 @@
+<%= form_for(@driver) do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <li>
+    <%= f.label :number, "Driver #" %>
+    <%= f.text_field :number %>
+  </li>
+  <li>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </li>
+  <li>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </li>
+  <li>
+    <%= f.label :unit_id, "Unit #" %>
+    <%= f.collection_select :unit_id, Unit.active.order(:number), :id, :number, :include_blank => true %>
+  </li>
+  <li>
+    <%= f.label :status %>
+    <%= f.select :status, [['Full-time', 'FT'], ['Part-time', 'PT']] %>
+  </li>
+  <li>
+    <%= f.label :shift %>
+    <%= f.select :shift, [nil, ['Day', 'D'], ['Night', 'N']] %>
+  </li>
+  <li>
+    <%= f.label :last_random_trip %>
+    <%= f.datetime_select :last_random_trip %>
+  </li>
+  <li>
+    <%= f.label :last_scheduled_trip %>
+    <%= f.datetime_select :last_scheduled_trip %>
+  </li>
+  <li>
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </li>
+  <li>
+    <%= f.label :skipped %>
+    <%= f.check_box :skipped %>
+  </li>
+  <li>
+    <%= f.submit "Save" %>
+  </li>
+  </ol>
+<% end %>

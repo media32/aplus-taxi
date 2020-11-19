@@ -1,0 +1,28 @@
+<%= form_for(@location) do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <li>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </li>
+  <li>
+    <%= f.label :distance_km %>
+    <%= f.text_field :distance_km %>
+  </li>
+  <li>
+    <%= f.label :distance_hr %>
+    <%= f.text_field :distance_hr %>
+  </li>
+  <li>
+    <%= f.label :charge %>
+    <%= f.text_field :charge %>
+  </li>
+  <li>
+    <%= f.label :fee %>
+    <%= f.text_field :fee %>
+  </li>
+  <li>
+    <%= f.submit "Save" %>
+  </li>
+  </ol>
+<% end %>

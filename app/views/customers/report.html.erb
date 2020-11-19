@@ -1,0 +1,25 @@
+<h1>Customers</h1>
+<table>  
+<tr>
+  <th>Type</th>
+  <th>Name</th>
+  <th>Taxable</th>
+  <th>Terms</th>
+  <th>Flat Rate</th>
+  <th>Flat Rate Orig</th>
+  <th>Flat Rate Dest</th>
+  <th>Flat Rate Renewed</th>
+</tr>
+<% @customers.each_with_index do |c,i| %>
+  <tr>
+    <td><%= c.cust_type %></td>
+    <td><%= c %></td>
+    <td><%= c.taxable? ? 'Yes' : 'No' %></td>
+    <td><%= c.terms? ? 'Yes': 'No' %></td>
+    <td class="price"><%= number_to_currency(c.rate) %></td>
+    <td><%= c.rate_orig %></td>
+    <td><%= c.rate_dest %></td>
+    <td class="date"><%= c.rate_renewed_on %></td>
+  </tr>
+<% end %>
+</table>

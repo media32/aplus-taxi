@@ -1,0 +1,14 @@
+<tr>
+  <td><%= customer.cust_type %></td>
+  <td><%= customer.code %></td>
+  <td><%= link_to customer, edit_customer_path(customer) %></td>
+  <td><%= image_tag customer.taxable? ? 'yes.png' : 'no.png' %></td>
+  <td><%= image_tag customer.terms? ? 'yes.png' : 'no.png' %></td>
+  <td class="price"><%= number_to_currency customer.rate %></td>
+  <td><%= customer.rate_orig %></td>
+  <td><%= customer.rate_dest %></td>
+  <td><%= image_tag 'no.png' if customer.rate_expired? %></td>
+  <td><%= image_tag 'yes.png', :title => customer.notes if customer.notes.present? %></td>
+  <td><%= image_tag customer.active? ? 'yes.png' : 'no.png' %></td>
+  <td><%= link_to "Edit", edit_customer_path(customer) %></td>
+</tr>

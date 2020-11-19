@@ -1,0 +1,64 @@
+<h1>Charges</h1>
+
+<ul id="submenu">
+  <li><%= link_to "New Charge", new_charge_path %></li>
+  <li><%= link_to "Summary Report", report_charges_path(:summary => 1, :q => params[:q], :customer_id => params[:customer_id], :field => params[:field], :from => params[:from], :to => params[:to]), :target => :blank %></li>
+  <li><%= link_to "Detailed Report", report_charges_path(:detailed => 1, :q => params[:q], :customer_id => params[:customer_id], :field => params[:field], :from => params[:from], :to => params[:to]), :target => :blank %></li>
+</ul>
+
+<%= form_tag charges_path, :method => :get do %>
+<ol>
+  <li>
+    <%= label_tag :q, 'Search' %>
+    <%= search_field_tag :q, params[:q], :size => 40 %>
+  </li>
+  <li>
+    <%= label_tag :customer_id %>
+    <%= select_tag :customer_id, options_for_select([''] + customers.map {|c| [c.to_s, c.id]}, params[:customer_id]) %>
+  </li>
+  <li>
+    <label for="date">Date</label>
+    <%= select_tag :field, options_for_select([['Written', 'written'], ['Created', 'created']], params[:field]) %>
+    from <%= select_date from, :prefix => :from, :use_month_numbers => true, :start_year => Time.current.year - 1, :end_year => Time.current.year %>
+    to <%= select_date to, :prefix => :to, :use_month_numbers => true, :start_year => Time.current.year - 1, :end_year => Time.current.year %>
+  </li>
+  <li>
+    <%= label_tag :per_page %>
+    <%= select_tag :per_page, options_for_select(['1', '10', '20', '50', '100'], params[:per_page]||'20') %>
+  </li>
+  <li>
+    <%= submit_tag "Submit" %>
+  </li>
+</ol>
+<% end %>
+
+<table id="charges" class="list">
+<tr>
+  <th>User</th>
+  <th>Customer</th>
+  <th><%= sortable "written_on", "Written" %></th>
+  <th>Driver</th>
+  <th class="price">Price</th>
+  <th class="price">Total</th>
+  <th>Details</th>
+  <th>Notes (internal)</th>
+  <th><%= sortable "created_at", "Created" %></th>
+  <th></th>
+</tr>
+<% @charges.each do |c| %>
+  <tr>
+    <td><%= c.user_initials %></td>
+    <td><%= c.customer_name %></td>
+    <td><%= c.written_on %></td>
+    <td><%= c.driver_number %></td>
+    <td class="number"><%= number_to_currency(c.price) %></td>
+    <td class="number"><%= number_to_currency(c.total) %></td>
+    <td><%= truncate(c.notes) %></td>
+    <td><%= truncate(c.notes_internal) %></td>
+    <td><%= c.created_at %></td>
+    <td><%= link_to "Edit", edit_charge_path(c) %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @charges %>

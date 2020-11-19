@@ -1,0 +1,7 @@
+<h1>Edit Stat</h1>
+
+<% if current_user.admin? %>
+  <%= link_to "Delete", @stat, :method => :delete, :confirm => confirm_delete %>
+<% end %>
+
+<%= render 'form' %>

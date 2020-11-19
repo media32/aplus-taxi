@@ -1,0 +1,38 @@
+<% if current_user %>
+<div id="menu">
+<ul>
+<% if !current_user.clerk? and !current_user.admin? %>
+  <li><%= link_to "Customers", customers_path %></li>
+  <li><%= link_to "Driver Shifts", driver_shifts_path %></li>
+  <li><%= link_to 'Locations', locations_path %></li>
+  <li><%= link_to 'LT Queue', queue_trips_path %></li>
+  <li><%= link_to 'LT', trips_path %></li>
+  <li><%= link_to 'Vehicle Issues', vehicle_issues_path %></li>
+<% end %>
+
+<% if current_user.clerk? and !current_user.admin? %>
+  <li><%= link_to "Customers", customers_path %></li>
+  <li><%= link_to "Driver Shifts", driver_shifts_path %></li>
+  <li><%= link_to 'Locations', locations_path %></li>
+  <li><%= link_to 'LT Queue', queue_trips_path %></li>
+  <li><%= link_to 'LT', trips_path %></li>
+  <li><%= link_to 'Stats', stats_path %></li>
+  <li><%= link_to 'Vehicle Issues', vehicle_issues_path %></li>
+<% end %>
+  
+<% if current_user.admin? %>
+  <li><%= link_to "Driver Shifts", driver_shifts_path %></li>
+  <li><%= link_to 'Charges', charges_path %></li>
+  <li><%= link_to 'Customers', customers_path %></li>
+  <li><%= link_to 'Drivers', drivers_path %></li>
+  <li><%= link_to 'Locations', locations_path %></li>
+  <li><%= link_to 'LT Queue', queue_trips_path %></li>
+  <li><%= link_to 'LT', trips_path %></li>
+  <li><%= link_to 'Stats', stats_path %></li>
+  <li><%= link_to 'Units', units_path %></li>
+  <li><%= link_to 'Users', users_path %></li>
+  <li><%= link_to 'Vehicle Issues', vehicle_issues_path %></li>
+<% end %>
+</ul>
+</div>
+<% end %>

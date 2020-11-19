@@ -1,0 +1,31 @@
+<h1>Users</h1>
+
+<ul id="submenu">
+  <li><%= link_to 'New User', new_user_path %></li>
+</ul>
+
+<% if @users.length > 0 %>
+<table class="list">
+<tr>
+  <th>Name</th>
+  <th>Initials</th>
+  <th>Login</th>
+  <th>Active</th>
+  <th>Clerk</th>
+  <th>Admin</th>
+  <th></th>
+</tr>
+
+<% for user in @users %>
+  <tr>
+    <td><%= link_to user.name, edit_user_path(user) %></td>
+    <td><%= user.initials %></td>
+    <td><%= user.login %></td>
+    <td><%= image_tag 'yes.png' if user.active? %></td>
+    <td><%= image_tag 'yes.png' if user.clerk? %></td>
+    <td><%= image_tag 'yes.png' if user.admin? %></td>
+    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+  </tr>
+<% end %>
+</table>
+<% end %>

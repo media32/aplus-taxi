@@ -1,0 +1,127 @@
+<%= form_for @stat do |f| %>
+  <%= f.error_messages %>
+
+  <fieldset class="date">
+    <ol>
+    <li>
+    <%= f.label :date %>
+    <%= f.date_select :date, :default => (Time.now - 1.day), :add_month_numbers => true, :use_short_month => true %>
+    <% unless f.object.new_record? %>
+      <%= f.object.holidays %>
+    <% end %>
+    </li>
+    <li><label>Temperature</label>
+      <ol>
+        <li><%= f.label :temp_max, "Max" %> <%= f.text_field :temp_max, :size => 4 %></li>
+        <li><%= f.label :temp_min, "Min" %> <%= f.text_field :temp_min, :size => 4 %></li>
+        <li><%= f.label :temp_mean, "Mean" %> <%= f.text_field :temp_mean, :size => 4 %></li>
+      </ol>
+    </li>
+    </ol>
+  </fieldset>
+
+  <div class="stats-day-night">
+  <fieldset class="day">
+  <legend>Day shift:</legend>
+  <ol>
+    <li>
+    <%= f.label :day_trips, "Trips" %>
+    <%= f.text_field :day_trips %>
+    </li>
+
+    <li>
+    <%= f.label :day_trips_lt, "Trips LT" %>
+    <%= f.text_field :day_trips_lt %>
+    </li>
+  
+    <li>
+    <%= f.label :day_trips_nt, "Trips NT/C" %>
+    <%= f.text_field :day_trips_nt %>
+    </li>
+  
+    <li>
+    <%= f.label :day_trips_ca, "Trips CA" %>
+    <%= f.text_field :day_trips_ca %>
+    </li>
+
+    <li>
+    <%= f.label :day_drivers_sch, "Drivers Scheduled" %>
+    <%= f.text_field :day_drivers_sch %>
+    </li>
+  
+    <li>
+    <%= f.label :day_drivers_act, "Drivers Actual" %>
+    <%= f.text_field :day_drivers_act %>
+    </li>
+  
+    <li>
+    <%= f.label :day_drivers_ext, "Drivers Extra" %>
+    <%= f.text_field :day_drivers_ext %>
+    </li>
+  
+    <li>
+    <%= f.label :day_drivers_lft, "Drivers Left Early" %>
+    <%= f.text_field :day_drivers_lft %>
+    </li>
+    </ol>
+  </fieldset>
+
+  <fieldset class="night">
+  <legend>Night shift:</legend>
+  <ol>
+    <li>
+    <%= f.label :night_trips, "Trips" %>
+    <%= f.text_field :night_trips %>
+    </li>
+  
+    <li>
+    <%= f.label :night_trips_lt, "Trips LT" %>
+    <%= f.text_field :night_trips_lt %>
+    </li>
+  
+    <li>
+    <%= f.label :night_trips_nt, "Trips NT/C" %>
+    <%= f.text_field :night_trips_nt %>
+    </li>
+  
+    <li>
+    <%= f.label :night_trips_ca, "Trips CA" %>
+    <%= f.text_field :night_trips_ca %>
+    </li>
+
+    <li>
+    <%= f.label :night_drivers_sch, "Drivers Scheduled" %>
+    <%= f.text_field :night_drivers_sch %>
+    </li>
+  
+    <li>
+    <%= f.label :night_drivers_act, "Drivers Actual" %>
+    <%= f.text_field :night_drivers_act %>
+    </li>
+  
+    <li>
+    <%= f.label :night_drivers_ext, "Drivers Extra" %>
+    <%= f.text_field :night_drivers_ext %>
+    </li>
+  
+    <li>
+    <%= f.label :night_drivers_lft, "Drivers Left Early" %>
+    <%= f.text_field :night_drivers_lft %>
+    </li>
+    </ol>
+  </fieldset>
+  </div>
+
+  <fieldset class="notes">
+  <ol>
+    <li>
+    <%= f.label :notes %>
+    <%= f.text_area :notes, :rows => 5 %>
+    </li>
+  </ol>
+  </fieldset>
+
+  <ol>
+    <li><%= f.submit %></li>
+  </ol>
+<% end %>

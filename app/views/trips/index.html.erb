@@ -1,0 +1,39 @@
+<h1>Long Trips</h1>
+
+<% if @trips.present? %>
+<table class="list">
+  <tr>
+    <th>R/S</th>
+    <th>D#</th>
+    <th>User</th>
+    <th>Location</th>
+    <th>Charge</th>
+    <th>Fee</th>
+    <th>Customer</th>
+    <th>Comment</th>
+    <th>Lease date</th>
+    <th>Date</th>
+    <th>Skip</th>
+    <th></th>
+  </tr>
+
+<% for trip in @trips %>
+  <tr>
+    <td><%= trip.scheduled ? 'S' : 'R' %></td>
+    <td><%= trip.driver %></td>
+    <td><%= trip.user.initials if trip.user %></td>
+    <td><%= trip.location %></td>
+    <td class="number"><%= trip.charge ? "%.2f" % trip.charge : '' %></td>
+    <td class="number"><%= trip.fee ? "%.2f" % trip.fee : '' %></td>
+    <td><%= trip.customer %></td>
+    <td><%= truncate(trip.comment) %></td>
+    <td><%= trip.lease %></td>
+    <td><%= trip.created_at %></td>
+    <td><%= image_tag 'no.png' if trip.skipped? %></td>
+    <td><%= link_to('Edit', edit_trip_path(trip)) if current_user.admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @trips %>
+<% end %>

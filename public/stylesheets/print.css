@@ -1,0 +1,14 @@
+body { background: white; font-family: sans-serif; font-size: 11pt; }
+
+h1 { display: none; }
+h2 { margin: .5em 0; font-size: 20pt; }
+
+table { width: 100%; font-size: 9pt; border-collapse: collapse; }
+th { border-top: 1px solid #000; border-bottom: 1px solid #000; text-align: left; padding: .25em 1em; text-transform :uppercase; }
+tr.totals td { border-top: 2px solid #000; }
+td { border-bottom: 1px solid #000; padding: .25em 1em; vertical-align: top; }
+td p { margin: 0; }
+
+.number, .price { text-align: right; }
+.date, .datetime { white-space: nowrap; }
+.page-break { page-break-before: always; }

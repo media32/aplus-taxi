@@ -1,0 +1,46 @@
+<h1>Charges Summary Report</h1>
+
+<table>
+
+<% last_customer = nil %>
+<% @charges.each_with_index do |c, i| %>
+  <% if c.customer_name != last_customer %>
+    <tr>
+    <td colspan="5">
+      <h2<% if i > 0 %> class="page-break"<% end %>><%= c.customer_name %></h2>
+      <p><%= from.to_date %> to <%= to.to_date %><% if params[:q].present? %> containing &quot;<%= params[:q] %>&quot;<% end %></p>
+    </td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Trips</th>
+      <th class="number">Price</th>
+      <th class="number">GST</th>
+      <th class="number">Total</th>
+    </tr>
+    <% last_customer = c.customer_name %>
+  <% end %>
+
+  <tr>
+    <td class="datetime"><%= c.written_on.strftime("%Y-%m-%d") %></td>
+    <td><%= c.trip_count %></td>
+    <td class="number"><%= number_to_currency(c.price) %></td>
+    <td class="number"><%= number_to_currency(c.total - c.price) %></td>
+    <td class="number"><%= number_to_currency(c.total) %></td>
+  </tr>
+  <% @total[:trips] += c.trip_count.to_i; @total[:price] += c.price; @total[:gst] += (c.total - c.price); @total[:total] += c.total %>
+
+  <% if (@charges[i+1] && @charges[i+1].customer_name != last_customer) || !@charges[i+1] %>
+    <tr class="totals">
+      <td class="number">TOTAL</td>
+      <td><%= @total[:trips] %></td>
+      <td class="number"><%= number_to_currency(@total[:price]) %></td>
+      <td class="number"><%= number_to_currency(@total[:gst]) %></td>
+      <td class="number"><%= number_to_currency(@total[:total]) %></td>
+    </tr>
+
+    <% @total.each_key {|k| @total[k] = 0} %>
+  <% end %>
+<% end if @charges %>
+
+</table>

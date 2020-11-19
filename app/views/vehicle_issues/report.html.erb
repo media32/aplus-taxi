@@ -1,0 +1,29 @@
+<h1>Vehicle Issues</h1>
+<table>
+<% last_unit_id = nil %>
+<% @vehicle_issues.each do |issue| %>
+  <% if issue.unit_id != last_unit_id %>
+    <tr>
+      <td colspan="5"><h2><%= issue.unit.number %></h2></td>
+    </tr>
+    <tr>
+      <th>Date</th>
+      <th>Driver</th>
+      <th>Odometer</th>
+      <th>Details</th>
+      <th>Completed</th>
+    </tr>
+    <% last_unit_id = issue.unit_id %>
+  <% end %>
+  <tr>
+    <td class="date"><%= issue.created_at.to_date %></td>
+    <td><%= issue.driver %></td>
+    <td><%= issue.odometer %></td>
+    <td>
+      <div class="category"><%= issue.category %></div>
+      <%= simple_format issue.details %>
+    </td>
+    <td><%= 'Yes' if issue.completed? %></td>
+  </tr>
+<% end %>
+</table>

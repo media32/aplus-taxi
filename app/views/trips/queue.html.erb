@@ -1,0 +1,52 @@
+<h1>LT Queue</h1>
+
+<%= form_tag queue_trips_path, :method => :get do %>
+  <%= hidden_field_tag :sort, params[:sort] %>
+  <%= select_tag :shift, options_for_select([['Day', 'd'], ['Night', 'n']], session[:shift]) %>
+  <%= submit_tag "Submit" %>
+<% end %>
+
+<% if @driver_shifts.present? %>
+<table class="list">
+  <tr>
+    <th>Driver</th>
+    <th>Name</th>
+    <th><%= sortable 'last_random_trip', 'Random' %></th>
+    <th><%= sortable 'last_scheduled_trip', 'Scheduled' %></th>
+    <th></th>
+  </tr>
+
+  <% @driver_shifts.each_with_index do |s, i| %>
+    <tr>
+      <td><%= s.driver %></td>
+      <td><%= s.driver.name %></td>
+      <td><%= s.driver.last_random_trip %></td>
+      <td><%= s.driver.last_scheduled_trip %></td>
+      <td>
+        <% if (s.driver.active and s.driver.status == 'FT') or
+              (s.driver.status == 'PT' and s.driver.skipped == true) %>
+          <%= image_tag 'yes.png' %>
+
+          <%= link_to("New trip", new_trip_path(
+            :driver_id => s.driver.id,
+            :scheduled => (params[:sort] == 'last_scheduled_trip' ? 1 : nil),
+            :continue => request.fullpath ),
+          (i > 0 ? {:confirm => "Are you sure?"} : nil) ) %>
+
+        <% else %>
+          <%= image_tag 'no.png' %>
+
+          <%= link_to("Skip", new_trip_path(
+                  :driver_id => s.driver.id,
+                  :scheduled => (params[:sort] == 'last_scheduled_trip' ? 1 : nil),
+                  :skip => 1,
+                  :continue => request.fullpath ),
+                (i > 0 ? {:confirm => "Are you sure you want to skip this driver?"} : nil) ) %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<% else %>
+  <p>No driver <%= params[:shift].present? ? () : 'day' %> shifts were found. <%= link_to "New driver shift", new_driver_shift_path(:shift => params[:shift]) %></p>
+<% end %>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>A-Plus Taxi - Lethbridge's Best Taxi Service</title>
+<%= stylesheet_link_tag 'base', 'home', :cache => 'all' %>
+<%= yield :head %>
+<% if Rails.env == 'production' %>
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20199137-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script>
+<% end %>
+</head>
+<body>
+<div id="header">
+  <div id="shortcuts">
+    <ul>
+      <li><%= link_to 'Login', login_path %></li>
+    </ul>
+  </div>
+  <a href="/"><img id="logo" src="/images/logo_l.png" alt="A-Plus Taxi Ltd" width="400" height="106" /></a>
+  <div id="right">
+    <p class="survey"><a href="http://www.surveymonkey.com/s/8RRZRR5" target="_blank">Click here to take a one-time internal A-Plus survey</a></p>
+  </div>
+</div>
+
+<div id="home">
+  <%= yield %>
+</div>
+
+<div id="footer">
+  <ul>
+  <li id="payment"><img src="/images/pay.gif" alt="" width="77" height="22" />
+  <img src="/images/interac.gif" alt="" width="22" height="22" /></li>
+  <li><p>If you do not get the best service<br />please call 403.394.9101 or email: <%= mail_to "comments@aplustaxi.ca", nil, :encode => :hex %></p></li>
+  <li><img id="bbb" src="/images/bbb.gif" alt="" width="45" height="72" /></li>
+  </ul>
+</div>
+
+</body>
+</html>

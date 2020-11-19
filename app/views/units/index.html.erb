@@ -1,0 +1,23 @@
+<h1>Units</h1>
+
+<ul id="submenu">
+  <li><%= link_to 'New Unit', new_unit_path %></li>
+</ul>
+
+<table class="list">
+  <tr>
+    <th>Number</th>
+    <th>Description</th>
+    <th>Active</th>
+    <th></th>
+  </tr>
+
+<% @units.each do |unit| %>
+  <tr>
+    <td><%= link_to unit, edit_unit_path(unit) %></td>
+    <td><%= unit.description %></td>
+    <td><%= image_tag 'yes.png' if unit.active? %></td>
+    <td><%= link_to 'Edit', edit_unit_path(unit) %></td>
+  </tr>
+<% end %>
+</table>

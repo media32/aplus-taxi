@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html"; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<% if @stats.present? %>
+  <table border="1" style="width: 100%; border-collapse: collapse; border-spacing: 0">
+  <tr>
+    <th rowspan="2">Day</th>
+    <th colspan="4">Day - Trips</th>
+    <th colspan="5">Day - Drivers</th>
+    <th colspan="4">Night - Trips</th>
+    <th colspan="5">Night - Drivers</th>
+    <th colspan="3">Temp</th>
+    <th rowspan="2">Holiday</th>
+    <th rowspan="2">Notes</th>
+  </tr>
+  <tr>
+    <th>T</th>
+    <th>LT</th>
+    <th>NT</th>
+    <th>CA</th>
+    <th>Sch</th>
+    <th>Act</th>
+    <th>Ext</th>
+    <th>Lft</th>
+    <th>Trips</th>
+    <th>T</th>
+    <th>LT</th>
+    <th>NT</th>
+    <th>CA</th>
+    <th>Sch</th>
+    <th>Act</th>
+    <th>Ext</th>
+    <th>Lft</th>
+    <th>Trips</th>
+    <th>Max</th>
+    <th>Min</th>
+    <th>Mean</th>
+  </tr>
+  <% @stats.each do |s| %>
+  <tr>
+    <td><%= s.date.strftime("%a") if s.date %></td>
+    <td class="number"><%= s.day_trips %></td>
+    <td class="number"><%= s.day_trips_lt %></td>
+    <td class="number"><%= s.day_trips_nt %></td>
+    <td class="number"><%= s.day_trips_ca %></td>
+    <td class="number"><%= s.day_drivers_sch %></td>
+    <td class="number"><%= s.day_drivers_act %></td>
+    <td class="number"><%= s.day_drivers_ext %></td>
+    <td class="number"><%= s.day_drivers_lft %></td>
+    <td class="number"><%= s.day_trips_per_day %></td>
+    <td class="number"><%= s.night_trips %></td>
+    <td class="number"><%= s.night_trips_lt %></td>
+    <td class="number"><%= s.night_trips_nt %></td>
+    <td class="number"><%= s.night_trips_ca %></td>
+    <td class="number"><%= s.night_drivers_sch %></td>
+    <td class="number"><%= s.night_drivers_act %></td>
+    <td class="number"><%= s.night_drivers_ext %></td>
+    <td class="number"><%= s.night_drivers_lft %></td>
+    <td class="number"><%= s.night_trips_per_day %></td>
+    <td class="number"><%= s.temp_max %></td>
+    <td class="number"><%= s.temp_min %></td>
+    <td class="number"><%= s.temp_mean %></td>
+    <td><%= s.holidays.present? ? 'Yes' : '' %></td>
+    <td><%= truncate(s.notes) %></td>
+  </tr>
+  <% end %>
+  </table>
+<% else %>
+  <p>No stats were found.</p>
+<% end %>
+</body>
+</html>

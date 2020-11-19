@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta content="text/html"; charset=UTF-8" http-equiv="Content-Type" />
+</head>
+<body>
+<table border="1" style="width: 100%; border-collapse: collapse; border-spacing: 0">
+  <tr>
+    <th>Number</th>
+    <th>Unit</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Status</th>
+    <th>Shift</th>
+    <th>Last Random Trip</th>
+    <th>Last Scheduled Trip</th>
+  </tr>
+<% @drivers.each do |driver| %>
+  <tr>
+    <td><%= driver.number %></td>
+    <td><%= driver.unit or 'Unknown' %></td>
+    <td><%= driver.first_name %></td>
+    <td><%= driver.last_name %></td>
+    <td><%= driver.status %></td>
+    <td><%= driver.shift %></td>
+    <td><%= driver.last_random_trip %></td>
+    <td><%= driver.last_scheduled_trip %></td>
+  </tr>
+<% end %>
+</table>
+</body>
+</html>

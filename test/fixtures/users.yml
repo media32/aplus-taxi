@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: Admin
+  last_name: User
+  initials: AU
+  login: admin
+  crypted_password: 5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8
+  admin: true
+

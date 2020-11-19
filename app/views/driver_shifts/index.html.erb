@@ -1,0 +1,27 @@
+<h1>Driver Shifts</h1>
+
+<ul id="submenu">
+<li><%= link_to 'New Driver Shift', new_driver_shift_path %></li>
+</ul>
+
+<%= form_tag driver_shifts_path, :method => :delete do %>
+  <table class="list">
+    <tr>
+      <th></th>
+      <th>Shift</th>
+      <th>Driver</th>
+      <th></th>
+    </tr>
+  
+    <% @driver_shifts.each do |s| %>
+    <tr>
+      <td><%= check_box_tag 'id[]', "#{s.id}" %></td>
+      <td><%= s.shift_name %></td>
+      <td><%= s.driver.detail rescue 'None' %></td>
+      <td><%= link_to 'Edit', edit_driver_shift_path(s) %></td>
+    </tr>
+    <% end %>
+  </table>
+
+  <p><%= submit_tag 'Delete Selected' %></p>
+<% end %>

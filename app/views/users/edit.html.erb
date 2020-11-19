@@ -1,0 +1,7 @@
+<h1>Edit User</h1>
+
+<% form_for @user do |f| %>
+  <%= render :partial => f %>
+<% end %>
+
+<%= link_to 'Delete', user_path(@user), :confirm => confirm_delete, :method => :delete %>

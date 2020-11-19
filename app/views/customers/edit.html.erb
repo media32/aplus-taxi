@@ -1,0 +1,7 @@
+<h1>Edit Customer</h1>
+
+<% if current_user.admin? %>
+  <%= link_to "Delete", customer_path(@customer), :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+
+<%= render 'form' %>

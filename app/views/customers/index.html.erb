@@ -1,0 +1,57 @@
+<h1>Customers</h1>
+
+<ul id="submenu">
+<li><%= link_to "New", new_customer_path %></li>
+<li><%= link_to "Print Report", report_customers_path(
+    :q => params[:q], :type => params[:type],
+    :terms => params[:terms], :active => params[:active],
+    :expired => params[:expired]), {:target => '_blank'} %></li>
+</ul>
+
+<%= form_tag customers_path, :method => :get do %>
+  <ol>
+  <li>
+    <%= label_tag :q, "Search" %>
+    <%= search_field_tag :q, params[:q], :size => 40 %>
+  </li>
+  <li>
+    <%= label_tag :type, "Type" %>
+    <%= select_tag :type, options_for_select([''] + Customer::TYPES, params[:type]) %>
+  </li>
+  <li>
+    <%= label_tag :terms, "Terms" %>
+    <%= select_tag :terms, options_for_select(['', ['Yes', 1], ['No', 0]], params[:terms]) %>
+  </li>
+  <li>
+    <%= label_tag :expired, "Flat rate expired" %>
+    <%= select_tag :expired, options_for_select(['', ['Yes', 1], ['No', 0]], params[:expired]) %>
+  </li>
+  <li>
+    <%= label_tag :active %>
+    <%= select_tag :active, options_for_select(['', ['Yes', 1], ['No', 0]], params[:active]) %>
+  </li>
+  <li>
+    <%= submit_tag "Submit" %>
+  </li>
+  </ol>
+<% end %>
+
+<table class="list">
+<tr>
+  <th>Type</th>
+  <th>Code</th>
+  <th>Name</th>
+  <th>Taxable</th>
+  <th>Terms</th>
+  <th>Flat Rate</th>
+  <th>Flat Rate Orig</th>
+  <th>Flat Rate Dest</th>
+  <th>Flat Rate Expired</th>
+  <th>Notes</th>
+  <th>Active</th>
+  <th></th>
+</tr>
+<%= render @customers %>
+</table>
+
+<%= will_paginate @customers %>

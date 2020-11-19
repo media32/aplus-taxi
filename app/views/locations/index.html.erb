@@ -1,0 +1,46 @@
+<h1>Locations</h1>
+
+<ul id="submenu">
+  <% if current_user.admin? %>
+  <li><%= link_to('New Location', new_location_path) %></li>
+  <% end %>
+  <li><%= link_to "Print Report", report_locations_path %></li>
+</ul>
+
+<%= form_tag locations_path, :method => :get do %>
+  <ol>
+  <li>
+      <%= label_tag :q, "Search" %>
+      <%= search_field_tag :q, params[:q], :size => 40 %>
+  </li>
+  <li>
+      <%= submit_tag "Submit" %>
+  </li>
+  </ol>
+<% end %>
+
+<% if @locations.length > 0 %>
+<table class="list">
+  <tr>
+    <th>Name</th>
+    <th>Distance km</th>
+    <th>Distance hr</th>
+    <th class="price">Charge</th>
+    <th class="price">Fee</th>
+    <th></th>
+  </tr>
+
+<% @locations.each do |l| %>
+  <tr>
+    <td><%= l.name %></td>
+    <td><%= l.distance_km %></td>
+    <td><%= l.distance_hr %></td>
+    <td class="price"><%= number_to_currency(l.charge) if l.charge %></td>
+    <td class="price"><%= number_to_currency(l.fee) if l.fee %></td>
+    <td><%= link_to('Edit', edit_location_path(l)) if current_user.admin? %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate @locations %>
+<% end %>

@@ -1,0 +1,34 @@
+<%= form_for(@charge) do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <li>
+    <%= f.label :customer_id %>
+    <%= f.collection_select :customer_id, customers, :id, :name %>
+    <p id="customer-notes"><%= @charge.customer.notes if @charge.customer %></p>
+  </li>
+  <li>
+    <%= f.label :written_on, "Date" %>
+    <%= f.date_select :written_on, :add_month_numbers => true, :use_short_month => true %>
+  </li>
+  <li>
+    <%= f.label :driver_number %>
+    <%= f.collection_select :driver_id, Driver.active, :id, :number %>
+  </li>
+  <li>
+    <%= f.label :total %>
+    <%= f.text_field :total, :size => 10 %>
+  </li>
+  <li>
+    <%= f.label :notes, "Comments" %>
+    <%= f.text_field :notes, :size => 40 %>
+    <p>e.g. PO &#35;, Route &#35;</p>
+  </li>
+  <li>
+    <%= f.label :notes_internal, "Internal notes" %>
+    <%= f.text_field :notes_internal, :size => 40 %>
+  </li>
+  <li>
+    <%= f.submit %>
+  </li>
+  </ol>
+<% end %>

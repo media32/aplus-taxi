@@ -1,0 +1,16 @@
+<%= form_for @driver_shift do |f| %>
+  <%= f.error_messages %>
+  <ol>
+  <li>
+    <%= f.label :driver_id %>
+    <%= f.collection_select :driver_id, Driver.active.order(:number), :id, :detail %>
+  </li>
+  <li>
+    <%= f.label :shift %>
+    <%= f.select :shift, [['Day', 'D'], ['Night', 'N']] %>
+  </li>
+  <li>
+    <%= f.submit "Save" %>
+  </li>
+  </ol>
+<% end %>

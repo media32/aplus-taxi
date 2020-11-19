@@ -1,0 +1,7 @@
+<h1>Edit Driver</h1>
+
+<% if current_user.admin? %>
+  <%= link_to 'Delete', @driver, :confirm => confirm_delete, :method => :delete %>
+<% end %>
+
+<%= render 'form' %>
